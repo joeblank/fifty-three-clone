@@ -1,0 +1,53 @@
+.paper-main-container {
+  width: 100%;
+  position: relative;
+  .video-container {
+    width: 100%;
+    position: relative;
+    z-index: -1000000;
+    .logo {
+      width: 53px;
+      height: 53px;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+    }
+    .sign-in-container {
+      .sign-in {}
+      .download {}
+    }
+    .stupid-video {}
+  }
+  .middle-container {
+    width: 100%;
+    background: white;
+    z-index: 300000;
+    margin-top: -9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .top-text {
+      background: purple;
+    }
+    .orange-icon-container {
+      display: flex;
+      .orange-letter {
+        width: 50px;
+        height: 45px;
+      }
+      .plus {
+        font-size: 25px;
+        font-weight: bold;
+        color: grey;
+      }
+      .orange-camera {
+        width: 50px;
+        height: 45px;
+      }
+      .orange-line {
+        width: 50px;
+        height: 45px;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ const sass = require('gulp-sass');
 const sourcemap = require('gulp-sourcemaps');
 
 const paths = {
-  jsSource: ['./app/app.js', './app/**/*./js'],
+  jsSource: ['./app/app.js', './app/**/*.js'],
   scssSource: ['./app/**/*.scss']
 };
 
@@ -32,4 +32,4 @@ gulp.task('watch', () => {
   gulp.watch(paths.scssSource, ['scss-bundle'])
 });
 
-gulp.task('default', 'js-bundle', 'scss-bundle')
+gulp.task('default', ['watch', 'js-bundle', 'scss-bundle'])

@@ -1,0 +1,59 @@
+.paper-main-container {
+  width: 100%;
+  position: relative; }
+  .paper-main-container .video-container {
+    width: 100%;
+    position: relative;
+    z-index: -1000000; }
+    .paper-main-container .video-container .logo {
+      width: 53px;
+      height: 53px;
+      position: absolute;
+      top: 20px;
+      left: 50px; }
+  .paper-main-container .middle-container {
+    width: 100%;
+    background: white;
+    z-index: 300000;
+    margin-top: -9vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .paper-main-container .middle-container .top-text {
+      background: purple; }
+    .paper-main-container .middle-container .orange-icon-container {
+      display: flex; }
+      .paper-main-container .middle-container .orange-icon-container .orange-letter {
+        width: 50px;
+        height: 45px; }
+      .paper-main-container .middle-container .orange-icon-container .plus {
+        font-size: 25px;
+        font-weight: bold;
+        color: grey; }
+      .paper-main-container .middle-container .orange-icon-container .orange-camera {
+        width: 50px;
+        height: 45px; }
+      .paper-main-container .middle-container .orange-icon-container .orange-line {
+        width: 50px;
+        height: 45px; }
+
+.main-container {
+  width: 100%; }
+  .main-container .nav-container {
+    width: 100%;
+    height: 100px;
+    background: #FFFCF5;
+    display: flex; }
+    .main-container .nav-container .logo-container .logo {
+      width: 55px;
+      height: 55px;
+      margin-left: 150px;
+      margin-top: 22px; }
+    .main-container .nav-container .links-container {
+      display: flex; }
+      .main-container .nav-container .links-container .facebook {
+        width: 25px;
+        height: 25px; }
+      .main-container .nav-container .links-container .twitter {
+        width: 25px;
+        height: 25px; }
