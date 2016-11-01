@@ -1,6 +1,10 @@
+//===IMPORTED FONTS===============
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+//===VARIABLES====================
 $nav-color: #FFFCF5;
+$main-font: 'Roboto', sans-serif;
 
-
+//===SCSS=========================
 .main-container {
   width: 100%;
   .nav-container {

@@ -28,6 +28,15 @@ angular.module('fifty-three').controller('mainCtrl', function ($scope, mainServi
 });
 'use strict';
 
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
+});
+'use strict';
+
 angular.module('fifty-three').controller('paperCtrl', function ($scope, mainService) {});
 'use strict';
 
