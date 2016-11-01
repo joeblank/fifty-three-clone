@@ -19,24 +19,36 @@
         flex-direction: column;
         margin-right: 50px; }
         .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
-          margin-bottom: 5px; }
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
+          cursor: pointer; }
       .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
         display: flex;
         flex-direction: column;
         margin-right: 50px; }
         .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
-          margin-bottom: 5px; }
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
+          cursor: pointer; }
       .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
         display: flex;
         flex-direction: column;
         margin-right: 50px; }
         .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
-          margin-bottom: 5px; }
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
+          cursor: pointer; }
       .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
         display: flex;
         flex-direction: column; }
         .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
-          margin-bottom: 5px; }
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
+          cursor: pointer; }
     .outer-wrapper .upper-wrapper .social-wrapper {
       margin: 0px 90px; }
       .outer-wrapper .upper-wrapper .social-wrapper a {
@@ -59,12 +71,15 @@
       font-size: 18px;
       display: flex;
       align-items: center; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
+        cursor: pointer; }
       .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
         background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
         background-size: contain;
         width: 36px;
         height: 36px;
-        margin: 0 0 0 10px; }
+        margin: 0 0 0 10px;
+        cursor: pointer; }
   .outer-wrapper .lower-wrapper {
     font-size: 14px;
     display: flex;
@@ -79,7 +94,7 @@
       font-weight: lighter;
       text-decoration: none;
       color: #66625B;
-      margin: 0 0 0 5px; }
+      margin: 0 0 0 10px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .paper-main-container {
@@ -187,7 +202,7 @@
     margin-top: 75px; }
     .paper-main-container .lower-wrapper .img-wrapper {
       background: url("http://www.fiftythree.com/assets/images/paper/pencil-light-bg.jpg") center no-repeat;
-      background-size: contain;
+      background-size: cover;
       width: 100%;
       height: 100vh;
       font-family: "Roboto", sans-serif;
@@ -222,7 +237,9 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .main-container {
-  width: 100%; }
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  position: relative; }
   .main-container .nav-container {
     width: 100%;
     height: 100px;
@@ -234,10 +251,67 @@
       margin-left: 150px;
       margin-top: 22px; }
     .main-container .nav-container .links-container {
-      display: flex; }
+      color: #66625B;
+      position: absolute;
+      top: 37px;
+      right: 75px;
+      display: flex;
+      align-items: center; }
+      .main-container .nav-container .links-container .paper {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .main-container .nav-container .links-container .pencil {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .main-container .nav-container .links-container .shop {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .main-container .nav-container .links-container .download {
+        margin: 0 25px 0 0;
+        border: solid 2px #66625B;
+        border-radius: 100px;
+        padding: 8px 10px;
+        text-decoration: none;
+        color: #66625B; }
+      .main-container .nav-container .links-container .download:hover {
+        background: #66625B;
+        color: white; }
       .main-container .nav-container .links-container .facebook {
-        width: 25px;
-        height: 25px; }
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 5px 0 0; }
       .main-container .nav-container .links-container .twitter {
-        width: 25px;
-        height: 25px; }
+        width: 30px;
+        height: 30px;
+        opacity: .27; }
+  .main-container .mid-wrapper {
+    background: url("http://www.fiftythree.com/assets/images/pencil/pencil-bg.jpg") no-repeat 46%;
+    background-size: auto 750px;
+    height: 750px;
+    position: relative;
+    margin-left: 300px; }
+    .main-container .mid-wrapper .mid-text {
+      font-size: 75px;
+      color: #66625B;
+      font-weight: lighter;
+      position: absolute;
+      top: 150px;
+      left: -100px; }
+      .main-container .mid-wrapper .mid-text span {
+        font-weight: bold; }
+      .main-container .mid-wrapper .mid-text .amazon-wrap {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin: 10px 0 0 0; }
+        .main-container .mid-wrapper .mid-text .amazon-wrap .amazon {
+          color: white;
+          background: #EB5E28;
+          padding: 10px 15px;
+          border-radius: 100px;
+          margin: 0 40px 0 0;
+          text-decoration: none;
+          cursor: pointer; }
+        .main-container .mid-wrapper .mid-text .amazon-wrap .amazon:hover {
+          background: #B33C12; }

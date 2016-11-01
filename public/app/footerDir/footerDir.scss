@@ -25,8 +25,11 @@ $paper-text-color: #66625B;
         margin-right: 50px;
         .paper{
           margin-bottom: 5px;
+          cursor: pointer;
         }
-        .pencil {}
+        .pencil {
+          cursor: pointer;
+        }
       }
       .left-mid-wrap {
         display: flex;
@@ -34,8 +37,11 @@ $paper-text-color: #66625B;
         margin-right: 50px;
         .shop {
           margin-bottom: 5px;
+          cursor: pointer;
         }
-        .support {}
+        .support {
+          cursor: pointer;
+        }
       }
       .right-mid-wrap {
         display: flex;
@@ -43,16 +49,22 @@ $paper-text-color: #66625B;
         margin-right: 50px;
         .blog {
           margin-bottom: 5px;
+          cursor: pointer;
         }
-        .press {}
+        .press {
+          cursor: pointer;
+        }
       }
       .right-wrap {
         display: flex;
         flex-direction: column;
         .about {
           margin-bottom: 5px;
+          cursor: pointer;
         }
-        .jobs{}
+        .jobs{
+          cursor: pointer;
+        }
       }
     }
     .social-wrapper {
@@ -81,13 +93,16 @@ $paper-text-color: #66625B;
       font-size: 18px;
       display: flex;
       align-items: center;
-      .fifty-three {}
+      .fifty-three {
+        cursor: pointer;
+      }
       .logo {
         background: url('http://fiftythree.com/assets/images/logos/53-dark.svg') center no-repeat;
         background-size: contain;
         width: 36px;
         height: 36px;
         margin: 0 0 0 10px;
+        cursor: pointer;
       }
     }
   }
@@ -107,7 +122,7 @@ $paper-text-color: #66625B;
         font-weight: lighter;
         text-decoration: none;
         color: $paper-text-color;
-        margin: 0 0 0 5px;
+        margin: 0 0 0 10px;
       }
     }
   }
