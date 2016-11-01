@@ -1,0 +1,114 @@
+//===IMPORTED FONTS===============
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+//===VARIABLES====================
+$main-font: 'Roboto', sans-serif;
+$paper-text-color: #66625B;
+
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px;
+  .upper-wrapper {
+    display: flex;
+    align-items: center;
+    .links-wrapper {
+      display: flex;
+      font-family: $main-font;
+      font-weight: lighter;
+      color: $paper-text-color;
+      font-size: 15px;
+      .left-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        .paper{
+          margin-bottom: 5px;
+        }
+        .pencil {}
+      }
+      .left-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        .shop {
+          margin-bottom: 5px;
+        }
+        .support {}
+      }
+      .right-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+        .blog {
+          margin-bottom: 5px;
+        }
+        .press {}
+      }
+      .right-wrap {
+        display: flex;
+        flex-direction: column;
+        .about {
+          margin-bottom: 5px;
+        }
+        .jobs{}
+      }
+    }
+    .social-wrapper {
+      margin: 0px 90px;
+      a {
+        text-decoration: none;
+      }
+      .fb {
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+      }
+      .twitter {
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 0 0 5px;
+      }
+    }
+    .fifty-three-wrapper {
+      color: $paper-text-color;
+      font-family: $main-font;
+      font-weight: lighter;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      .fifty-three {}
+      .logo {
+        background: url('http://fiftythree.com/assets/images/logos/53-dark.svg') center no-repeat;
+        background-size: contain;
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+  .lower-wrapper {
+    font-size: 14px;
+    display: flex;
+    margin: 40px 0 0 0;
+    .copy-right {
+      font-family: $main-font;
+      font-weight: lighter;
+      color: $paper-text-color;
+      margin: 0 10px 0 0;
+    }
+    .links {
+      a {
+        font-family: $main-font;
+        font-weight: lighter;
+        text-decoration: none;
+        color: $paper-text-color;
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+}
