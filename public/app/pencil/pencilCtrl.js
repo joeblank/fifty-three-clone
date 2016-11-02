@@ -1,5 +1,5 @@
 angular.module('fifty-three')
-.controller('pencilCtrl', ($scope, mainService) => {
+.controller('pencilCtrl', ($scope) => {
 
 
 

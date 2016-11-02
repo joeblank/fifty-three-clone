@@ -41,4 +41,6 @@ gulp.task('watch', () => {
   gulp.watch(paths.scssSource, ['scss-bundle'])
 });
 
-gulp.task('default', ['watch', 'js-bundle', 'scss-bundle', 'serve']);
+
+gulp.task('default', ['watch', 'js-bundle', 'scss-bundle']);
+// gulp.task('default', ['watch', 'js-bundle', 'scss-bundle', 'serve']);

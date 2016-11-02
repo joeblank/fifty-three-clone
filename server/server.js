@@ -26,7 +26,7 @@ const db = app.get('db');
 const productsCtrl = require('./productsCtrl');
 
 // ===ENDPOINTS============================
-
+app.get('/api/products', productsCtrl.getProducts);
 
 
 

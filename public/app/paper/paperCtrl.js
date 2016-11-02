@@ -1,6 +1,6 @@
 angular.module('fifty-three')
-.controller('paperCtrl', ($scope, mainService) => {
+.controller('paperCtrl', ($scope) => {
 
 
-  
+
 })

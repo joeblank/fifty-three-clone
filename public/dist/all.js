@@ -20,30 +20,44 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
 });
 'use strict';
 
-angular.module('fifty-three').service('mainService', function ($http, $q) {
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
 
-  this.broken = 'working';
+angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {
+
+  var getProducts = function getProducts() {
+    shopService.getProducts().then(function (response) {
+      console.log('response from server: ' + response);
+      $scope.products = response;
+    });
+  };
+  getProducts();
 });
 'use strict';
 
-angular.module('fifty-three').controller('mainCtrl', function ($scope, mainService) {
+angular.module('fifty-three').service('shopService', function ($http, $q) {
 
-  $scope.broken = mainService.broken;
+  this.getProducts = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/products'
+    }).then(function (response) {
+      return response.data;
+    });
+  };
 });
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope, mainService) {});
+"use strict";
+"use strict";
 'use strict';
 
 angular.module('fifty-three').directive('footerDir', function () {
   return {
     restrict: 'AE',
-    templateUrl: './app/footerDir/footerDir.html',
+    templateUrl: './app/directives/footerDir/footerDir.html',
     controller: function controller($scope) {}
   };
 });
-'use strict';
-
-angular.module('fifty-three').controller('pencilCtrl', function ($scope, mainService) {});
-"use strict";
 //# sourceMappingURL=all.js.map
