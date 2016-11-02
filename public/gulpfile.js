@@ -3,11 +3,20 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const sourcemap = require('gulp-sourcemaps');
+const nodemon = require('gulp-nodemon');
+// const annotate = require('gulp-ng-annotate');
 
 const paths = {
   jsSource: ['./app/app.js', './app/**/*.js'],
-  scssSource: ['./app/**/*.scss']
+  scssSource: ['./app/**/*.scss'],
+  server: ['./../server/server.js']
 };
+
+gulp.task('serve', () => {
+  nodemon({
+    'script': paths.server
+  })
+})
 
 gulp.task('js-bundle', () => {
   gulp.src(paths.jsSource)
@@ -32,4 +41,4 @@ gulp.task('watch', () => {
   gulp.watch(paths.scssSource, ['scss-bundle'])
 });
 
-gulp.task('default', ['watch', 'js-bundle', 'scss-bundle'])
+gulp.task('default', ['watch', 'js-bundle', 'scss-bundle', 'serve']);

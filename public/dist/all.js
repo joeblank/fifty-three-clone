@@ -32,6 +32,9 @@ angular.module('fifty-three').controller('mainCtrl', function ($scope, mainServi
 });
 'use strict';
 
+angular.module('fifty-three').controller('paperCtrl', function ($scope, mainService) {});
+'use strict';
+
 angular.module('fifty-three').directive('footerDir', function () {
   return {
     restrict: 'AE',
@@ -39,9 +42,6 @@ angular.module('fifty-three').directive('footerDir', function () {
     controller: function controller($scope) {}
   };
 });
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope, mainService) {});
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope, mainService) {});
