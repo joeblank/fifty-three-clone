@@ -267,10 +267,10 @@
         margin: 0 25px 0 0;
         cursor: pointer; }
       .main-container .nav-container .links-container .download {
-        margin: 0 25px 0 0;
+        margin: 0 30px 0 0;
         border: solid 2px #66625B;
         border-radius: 100px;
-        padding: 8px 10px;
+        padding: 8px 15px;
         text-decoration: none;
         color: #66625B; }
       .main-container .nav-container .links-container .download:hover {
@@ -315,3 +315,54 @@
           cursor: pointer; }
         .main-container .mid-wrapper .mid-text .amazon-wrap .amazon:hover {
           background: #B33C12; }
+        .main-container .mid-wrapper .mid-text .amazon-wrap .alsoAt {
+          cursor: pointer; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.shop-nav-wrapper {
+  font-family: "Roboto", sans-serif; }
+  .shop-nav-wrapper .nav-container {
+    width: 100%;
+    height: 100px;
+    background: #FFFCF5;
+    display: flex; }
+    .shop-nav-wrapper .nav-container .logo-container .logo {
+      width: 55px;
+      height: 55px;
+      margin-left: 150px;
+      margin-top: 22px; }
+    .shop-nav-wrapper .nav-container .links-container {
+      color: #66625B;
+      position: absolute;
+      top: 37px;
+      right: 75px;
+      display: flex;
+      align-items: center; }
+      .shop-nav-wrapper .nav-container .links-container .paper {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .pencil {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .shop {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .download {
+        margin: 0 30px 0 0;
+        border: solid 2px #66625B;
+        border-radius: 100px;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #66625B; }
+      .shop-nav-wrapper .nav-container .links-container .download:hover {
+        background: #66625B;
+        color: white; }
+      .shop-nav-wrapper .nav-container .links-container .facebook {
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 5px 0 0; }
+      .shop-nav-wrapper .nav-container .links-container .twitter {
+        width: 30px;
+        height: 30px;
+        opacity: .27; }

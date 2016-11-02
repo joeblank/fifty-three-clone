@@ -14,6 +14,11 @@ angular.module('fifty-three', ['ui.router'])
     templateUrl: './app/pencil/pencil.html',
     controller: 'pencilCtrl'
   })
+  .state('shop', {
+    url: '/shop',
+    templateUrl: './app/shop/shop.html',
+    controller: 'shopCtrl'
+  })
 
 
 

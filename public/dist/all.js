@@ -12,6 +12,10 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
     url: '/pencil',
     templateUrl: './app/pencil/pencil.html',
     controller: 'pencilCtrl'
+  }).state('shop', {
+    url: '/shop',
+    templateUrl: './app/shop/shop.html',
+    controller: 'shopCtrl'
   });
 });
 'use strict';
@@ -41,4 +45,5 @@ angular.module('fifty-three').controller('paperCtrl', function ($scope, mainServ
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope, mainService) {});
+"use strict";
 //# sourceMappingURL=all.js.map
