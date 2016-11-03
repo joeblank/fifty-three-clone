@@ -42,5 +42,5 @@ gulp.task('watch', () => {
 });
 
 
-gulp.task('default', ['watch', 'js-bundle', 'scss-bundle']);
-// gulp.task('default', ['watch', 'js-bundle', 'scss-bundle', 'serve']);
+// gulp.task('default', ['watch', 'js-bundle', 'scss-bundle']);
+gulp.task('default', ['watch', 'serve', 'js-bundle', 'scss-bundle']);

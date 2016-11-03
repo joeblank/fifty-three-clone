@@ -18,12 +18,14 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
     controller: 'shopCtrl'
   });
 });
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+"use strict";
+"use strict";
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {
@@ -49,8 +51,6 @@ angular.module('fifty-three').service('shopService', function ($http, $q) {
     });
   };
 });
-"use strict";
-"use strict";
 'use strict';
 
 angular.module('fifty-three').directive('footerDir', function () {

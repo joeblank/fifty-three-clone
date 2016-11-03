@@ -33,7 +33,7 @@ app.get('/api/products', productsCtrl.getProducts);
 
 
 //===PORT====================================
-const port = 3400;
+const port = 8000;
 app.listen(port, () => {
   console.log('Listening on port: ' + port);
 })
