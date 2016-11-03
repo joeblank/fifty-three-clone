@@ -21,18 +21,45 @@ angular.module('fifty-three')
       };
       $scope.pencil = carouselDirService.pencil;
 
-      $(function () {
-        $('.gold').on('click', function() {
+      $scope.addToCart = (pencil) => {
+        console.log('controller to service: ');
+        console.log(pencil);
+        carouselDirService.addToCart(pencil);
+      }
+
+      $(() =>  {
+        $('.gold').on('click', () => {
           $('.gold').removeClass('gold-h');
-          $('.gold').addClass('selected')
+          $('.graphite').removeClass('selected');
+          $('.walnut').removeClass('selected');
+          $('.gold').addClass('selected');
+          $('.graphite').addClass('graphite-h');
+          $('.walnut').addClass('walnut-h')
           })
-        })
+        });
+      $(() =>  {
+        $('.graphite').on('click', () => {
+          $('.graphite').removeClass('graphite-h');
+          $('.gold').removeClass('selected');
+          $('.walnut').removeClass('selected');
+          $('.graphite').addClass('selected');
+          $('.gold').addClass('gold-h');
+          $('.walnut').addClass('walnut-h')
+          })
+        });
+      $(() =>  {
+        $('.walnut').on('click', () => {
+          $('.walnut').removeClass('walnut-h');
+          $('.graphite').removeClass('selected');
+          $('.gold').removeClass('selected');
+          $('.walnut').addClass('selected');
+          $('.graphite').addClass('graphite-h');
+          $('.gold').addClass('gold-h')
+          })
+        });
 
 
 
     }
   }
-
-
-
 })

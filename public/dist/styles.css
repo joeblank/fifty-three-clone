@@ -138,55 +138,6 @@
           opacity: .7; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-.shop-nav-wrapper {
-  font-family: "Roboto", sans-serif; }
-  .shop-nav-wrapper .nav-container {
-    width: 100%;
-    height: 100px;
-    background: #FFFCF5;
-    display: flex; }
-    .shop-nav-wrapper .nav-container .logo-container .logo {
-      width: 55px;
-      height: 55px;
-      margin-left: 150px;
-      margin-top: 22px; }
-    .shop-nav-wrapper .nav-container .links-container {
-      color: #66625B;
-      position: absolute;
-      top: 37px;
-      right: 75px;
-      display: flex;
-      align-items: center; }
-      .shop-nav-wrapper .nav-container .links-container .paper {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .pencil {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .shop {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .download {
-        margin: 0 30px 0 0;
-        border: solid 2px #66625B;
-        border-radius: 100px;
-        padding: 8px 15px;
-        text-decoration: none;
-        color: #66625B; }
-      .shop-nav-wrapper .nav-container .links-container .download:hover {
-        background: #66625B;
-        color: white; }
-      .shop-nav-wrapper .nav-container .links-container .facebook {
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 5px 0 0; }
-      .shop-nav-wrapper .nav-container .links-container .twitter {
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 .main-container {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -269,94 +220,54 @@
         .main-container .mid-wrapper .mid-text .amazon-wrap .alsoAt {
           cursor: pointer; }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.shop-nav-wrapper {
   font-family: "Roboto", sans-serif; }
-  .carousel-wrapper .background-image {
+  .shop-nav-wrapper .nav-container {
     width: 100%;
-    background-size: cover; }
-  .carousel-wrapper .carousel-bg-img {
-    width: 100%; }
-    .carousel-wrapper .carousel-bg-img .order-status-bar {
-      position: relative; }
-      .carousel-wrapper .carousel-bg-img .order-status-bar .shop {
-        position: absolute;
-        top: 0px;
-        left: 0px; }
-      .carousel-wrapper .carousel-bg-img .order-status-bar .order-container {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        display: flex; }
-    .carousel-wrapper .carousel-bg-img .right-side-nav {
-      width: 100%;
+    height: 100px;
+    background: #FFFCF5;
+    display: flex; }
+    .shop-nav-wrapper .nav-container .logo-container .logo {
+      width: 55px;
+      height: 55px;
+      margin-left: 20.5vw;
+      margin-top: 22px; }
+    .shop-nav-wrapper .nav-container .links-container {
+      color: #66625B;
+      position: absolute;
+      top: 37px;
+      right: 75px;
       display: flex;
-      justify-content: flex-end; }
-      .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap {
-        padding: 100px 0 0 0;
-        width: 25vw;
-        margin: 0 15vw 0 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .pencil {
-          font-size: 50px;
-          font-weight: bold;
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .digital-stylus {
-          font-size: 20px;
-          font-weight: lighter;
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .pencil-name {
-          font-size: 20px;
-          font-weight: bold;
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .price {
-          font-size: 25px;
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .shipping {
-          background: #66615B;
-          color: #F1EAE0;
-          padding: 2px 5px;
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal {
-          display: flex;
-          margin: 15px 0 10px 0; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .gold {
-            width: 50px;
-            height: 50px;
-            background-size: contain;
-            margin-right: 20px; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .gold-h:hover {
-            border: solid 3px rgba(0, 0, 0, 0.27);
-            border-radius: 100%;
-            padding: 2px; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .graphite {
-            width: 50px;
-            height: 50px;
-            background-size: contain;
-            margin-right: 20px; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .graphite:hover {
-            border: solid 3px rgba(0, 0, 0, 0.27);
-            border-radius: 100%;
-            padding: 2px; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .walnut {
-            width: 50px;
-            height: 50px;
-            background-size: contain; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .walnut:hover {
-            border: solid 3px rgba(0, 0, 0, 0.27);
-            border-radius: 100%;
-            padding: 2px; }
-          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .selected {
-            border: solid black 5px;
-            border-radius: 100%;
-            padding: 2px; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .shipping-to {
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .americas-wrapper {
-          margin: 0 0 10px 0; }
-        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .add-to-cart {
-          margin: 0 0 10px 0; }
+      align-items: center; }
+      .shop-nav-wrapper .nav-container .links-container .paper {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .pencil {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .shop {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .download {
+        margin: 0 30px 0 0;
+        border: solid 2px #66625B;
+        border-radius: 100px;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #66625B; }
+      .shop-nav-wrapper .nav-container .links-container .download:hover {
+        background: #66625B;
+        color: white; }
+      .shop-nav-wrapper .nav-container .links-container .facebook {
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 5px 0 0; }
+      .shop-nav-wrapper .nav-container .links-container .twitter {
+        width: 30px;
+        height: 30px;
+        opacity: .27; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .outer-wrapper {
@@ -455,3 +366,114 @@
       text-decoration: none;
       color: #66625B;
       margin: 0 0 0 10px; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  font-family: "Roboto", sans-serif; }
+  .carousel-wrapper .background-image {
+    width: 100%;
+    background-size: cover; }
+  .carousel-wrapper .carousel-bg-img {
+    width: 100vw;
+    height: 100vh; }
+    .carousel-wrapper .carousel-bg-img .order-status-bar {
+      position: relative; }
+      .carousel-wrapper .carousel-bg-img .order-status-bar .shop {
+        font-size: 30px;
+        font-weight: lighter;
+        margin: 0 0 0 20vw;
+        position: absolute;
+        top: 35px;
+        left: 0px; }
+      .carousel-wrapper .carousel-bg-img .order-status-bar .order-container {
+        position: absolute;
+        top: 35px;
+        right: 0px;
+        display: flex; }
+    .carousel-wrapper .carousel-bg-img .right-side-nav {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end; }
+      .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap {
+        padding: 120px 0 0 0;
+        width: 25vw;
+        margin: 0 15vw 0 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .pencil {
+          font-size: 50px;
+          font-weight: bold;
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .digital-stylus {
+          font-size: 20px;
+          font-weight: lighter;
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .pencil-name {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .price {
+          font-size: 25px;
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .shipping {
+          background: #66615B;
+          color: #F1EAE0;
+          padding: 2px 5px;
+          margin: 0 0 10px 0;
+          text-align: center;
+          width: 250px;
+          border-radius: 100px;
+          padding: 5px 0px; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal {
+          display: flex;
+          margin: 15px 0 10px 0; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .gold {
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            margin-right: 20px; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .gold-h:hover {
+            border: solid 3px rgba(0, 0, 0, 0.27);
+            border-radius: 100%;
+            padding: 2px; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .graphite {
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            margin-right: 20px; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .graphite-h:hover {
+            border: solid 3px rgba(0, 0, 0, 0.27);
+            border-radius: 100%;
+            padding: 2px; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .walnut {
+            width: 50px;
+            height: 50px;
+            background-size: contain; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .walnut-h:hover {
+            border: solid 3px rgba(0, 0, 0, 0.27);
+            border-radius: 100%;
+            padding: 2px; }
+          .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .gold-graph-wal .selected {
+            border: solid 5px rgba(0, 0, 0, 0.6);
+            border-radius: 100%;
+            padding: 2px; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .shipping-to {
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .americas-wrapper {
+          margin: 0 0 10px 0; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .add-to-cart {
+          background: #E55A26;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 0 0 10px 0;
+          width: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          padding: 15px 15px; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .add-to-cart:hover {
+          background: #B33C12;
+          cursor: pointer; }
+        .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .works-on {
+          font-size: 15px;
+          font-weight: lighter; }

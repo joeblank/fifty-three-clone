@@ -20,6 +20,9 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
 });
 'use strict';
 
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
 'use strict';
 
@@ -48,9 +51,6 @@ angular.module('fifty-three').service('shopService', function ($http, $q) {
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
 angular.module('fifty-three').directive('carouselDir', function () {
 
   return {
@@ -73,10 +73,40 @@ angular.module('fifty-three').directive('carouselDir', function () {
       };
       $scope.pencil = carouselDirService.pencil;
 
+      $scope.addToCart = function (pencil) {
+        console.log('controller to service: ');
+        console.log(pencil);
+        carouselDirService.addToCart(pencil);
+      };
+
       $(function () {
         $('.gold').on('click', function () {
           $('.gold').removeClass('gold-h');
+          $('.graphite').removeClass('selected');
+          $('.walnut').removeClass('selected');
           $('.gold').addClass('selected');
+          $('.graphite').addClass('graphite-h');
+          $('.walnut').addClass('walnut-h');
+        });
+      });
+      $(function () {
+        $('.graphite').on('click', function () {
+          $('.graphite').removeClass('graphite-h');
+          $('.gold').removeClass('selected');
+          $('.walnut').removeClass('selected');
+          $('.graphite').addClass('selected');
+          $('.gold').addClass('gold-h');
+          $('.walnut').addClass('walnut-h');
+        });
+      });
+      $(function () {
+        $('.walnut').on('click', function () {
+          $('.walnut').removeClass('walnut-h');
+          $('.graphite').removeClass('selected');
+          $('.gold').removeClass('selected');
+          $('.walnut').addClass('selected');
+          $('.graphite').addClass('graphite-h');
+          $('.gold').addClass('gold-h');
         });
       });
     }
@@ -115,6 +145,10 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   this.walnut = function () {
     this.pencil = pencils[2];
     console.log(this.pencil);
+  };
+  this.addToCart = function (pencil) {
+    console.log('service to cart: ');
+    console.log(pencil);
   };
 });
 'use strict';

@@ -1,6 +1,5 @@
 <section class='carousel-wrapper'>
-  <!-- <img class='background-image' src="{{pencil.images[0]}}" alt="stylus pencil by fiftythree" /> -->
-  <div style="background: url('{{pencil.images[0]}}'); background-size: cover" class="carousel-bg-img">
+  <div style="background: url({{pencil.images[0]}}); background-repeat: no-repeat; background-size: cover; background-position: center" class="carousel-bg-img">
     <div class="order-status-bar">
       <div class="shop">Shop</div>
       <div class="order-container">
@@ -18,13 +17,13 @@
         <div class="shipping">Free Shipping to US & Canada</div>
         <div class="gold-graph-wal">
           <div ng-click='gold()'>
-            <img class="gold gold-h" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_gold.png?1246397996584665470" alt="gold" />
+            <img class="gold selected" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_gold.png?1246397996584665470" alt="gold" />
           </div>
           <div ng-click='graphite()'>
-            <img class="graphite" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_graphite.png?1246397996584665470" alt="grpahite" />
+            <img class="graphite graphite-h" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_graphite.png?1246397996584665470" alt="grpahite" />
           </div>
           <div ng-click='walnut()'>
-            <img class='walnut' src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_walnut.png?1246397996584665470" alt="walnut" />
+            <img class='walnut walnut-h' src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_walnut.png?1246397996584665470" alt="walnut" />
           </div>
         </div>
         <div class="shipping-to">Shipping to:</div>
@@ -32,8 +31,9 @@
           <div class="globe"></div>
           <div class="drop-down-menu"></div>
         </div>
-        <div class="add-to-cart">Add to cart > </div>
-        <div class="works-on"></div>
+        <div class="add-to-cart" ng-click='addToCart(pencil)'>Add to cart</div>
+        <div class="works-on">Works on iPad3, 4, Air (all), mini (all),
+          iPad Pro, and iPhone 42 and above</div>
       </div>
     </div>
   </div>

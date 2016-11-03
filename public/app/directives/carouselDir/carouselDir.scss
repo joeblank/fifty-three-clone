@@ -17,17 +17,21 @@ $shipping-bg: #66615B;
     background-size: cover;
   }
   .carousel-bg-img {
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     .order-status-bar {
       position: relative;
       .shop {
+        font-size: 30px;
+        font-weight: lighter;
+        margin: 0 0 0 20vw;
         position: absolute;
-        top: 0px;
+        top: 35px;
         left: 0px;
       }
       .order-container {
         position: absolute;
-        top: 0px;
+        top: 35px;;
         right: 0px;
         display: flex;
         .order-status {}
@@ -37,12 +41,10 @@ $shipping-bg: #66615B;
     }
     .right-side-nav {
       width: 100%;
-      // position: absolute;
-      // right: 0px;
       display: flex;
       justify-content: flex-end;
       .right-nav-wrap {
-        padding: 100px 0 0 0;
+        padding: 120px 0 0 0;
         width: 25vw;
         margin: 0 15vw 0 0;
         .pencil {
@@ -69,6 +71,10 @@ $shipping-bg: #66615B;
           color: #F1EAE0;
           padding: 2px 5px;
           margin: 0 0 10px 0;
+          text-align: center;
+          width: 250px;
+          border-radius: 100px;
+          padding: 5px 0px;
         }
         .gold-graph-wal {
           display: flex;
@@ -90,7 +96,7 @@ $shipping-bg: #66615B;
             background-size: contain;
             margin-right: 20px;
           }
-          .graphite:hover {
+          .graphite-h:hover {
             border: solid 3px rgba(0, 0, 0, .27);
             border-radius: 100%;
             padding: 2px;
@@ -100,13 +106,13 @@ $shipping-bg: #66615B;
             height: 50px;
             background-size: contain;
           }
-          .walnut:hover {
+          .walnut-h:hover {
             border: solid 3px rgba(0, 0, 0, .27);
             border-radius: 100%;
             padding: 2px;
           }
           .selected {
-            border: solid black 5px;
+            border: solid 5px rgba(0, 0, 0, .6);
             border-radius: 100%;
             padding: 2px;
           }
@@ -120,9 +126,24 @@ $shipping-bg: #66615B;
           .drop-down-menu {}
         }
         .add-to-cart {
+          background: #E55A26;
+          color: rgba(255, 255, 255, .8);
           margin: 0 0 10px 0;
+          width: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          padding: 15px 15px;
         }
-        .works-on {}
+        .add-to-cart:hover {
+          background: #B33C12;
+          cursor: pointer;
+        }
+        .works-on {
+          font-size: 15px;
+          font-weight: lighter;
+        }
       }
     }
   }

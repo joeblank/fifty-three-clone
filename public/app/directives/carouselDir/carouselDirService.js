@@ -45,6 +45,9 @@ this.walnut = function() {
   console.log(this.pencil);
 
 };
-
+this.addToCart = (pencil) => {
+console.log('service to cart: ');
+console.log(pencil);
+}
 
 })
