@@ -26,7 +26,7 @@ angular.module('fifty-three')
         console.log(pencil);
         carouselDirService.addToCart(pencil);
       }
-
+      //===JQUERY==================================
       $(() =>  {
         $('.gold').on('click', () => {
           $('.gold').removeClass('gold-h');
@@ -59,7 +59,9 @@ angular.module('fifty-three')
         });
 
 
-
+    //===END CONTROLLER==
     }
+  //===END RETURN========
   }
+//===END=================
 })

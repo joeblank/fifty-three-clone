@@ -16,7 +16,23 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
     url: '/shop',
     templateUrl: './app/shop/shop.html',
     controller: 'shopCtrl'
+  }).state('cart', {
+    url: '/cart',
+    templateUrl: './app/cart/cart.html',
+    controller: 'shopCtrl'
   });
+});
+'use strict';
+
+angular.module('fifty-three').controller('cartCtrl', function ($scope) {
+
+  //===END CTRL=======
+});
+'use strict';
+
+angular.module('fifty-three').service('cartService', function ($http, $q) {
+
+  //===END SERVICE=======
 });
 'use strict';
 
@@ -78,7 +94,7 @@ angular.module('fifty-three').directive('carouselDir', function () {
         console.log(pencil);
         carouselDirService.addToCart(pencil);
       };
-
+      //===JQUERY==================================
       $(function () {
         $('.gold').on('click', function () {
           $('.gold').removeClass('gold-h');
@@ -109,12 +125,17 @@ angular.module('fifty-three').directive('carouselDir', function () {
           $('.gold').addClass('gold-h');
         });
       });
+
+      //===END CONTROLLER==
     }
+    //===END RETURN========
   };
+  //===END=================
 });
 'use strict';
 
 angular.module('fifty-three').service('carouselDirService', function ($http, $q) {
+  var _this = this;
 
   var gold = {
     name: 'Gold',
@@ -132,24 +153,29 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
     images: ['./../../images/pencil-walnut-1.jpg', './../../images/pencil-walnut-2.jpg', './../../images/pencil-walnut-3.jpg']
   };
   var pencils = [gold, graphite, walnut];
+
   this.pencil = pencils[0];
+
   this.gold = function () {
     console.log('gold service');
-    this.pencil = pencils[0];
-    console.log(this.pencil);
+    _this.pencil = pencils[0];
+    console.log(_this.pencil);
   };
   this.graphite = function () {
-    this.pencil = pencils[1];
-    console.log(this.pencil);
+    _this.pencil = pencils[1];
+    console.log(_this.pencil);
   };
   this.walnut = function () {
-    this.pencil = pencils[2];
-    console.log(this.pencil);
+    _this.pencil = pencils[2];
+    console.log(_this.pencil);
   };
+
   this.addToCart = function (pencil) {
     console.log('service to cart: ');
     console.log(pencil);
   };
+
+  //==END=====
 });
 'use strict';
 
@@ -157,6 +183,15 @@ angular.module('fifty-three').directive('footerDir', function () {
   return {
     restrict: 'AE',
     templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
+});
+'use strict';
+
+angular.module('fifty-three').directive('navDir', function () {
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/navDir/navDir.html',
     controller: function controller($scope) {}
   };
 });

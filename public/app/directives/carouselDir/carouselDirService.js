@@ -29,25 +29,32 @@ angular.module('fifty-three')
     ]
   };
 const pencils = [gold, graphite, walnut];
+
 this.pencil = pencils[0];
-this.gold = function () {
+
+this.gold = () => {
   console.log('gold service');
   this.pencil = pencils[0];
   console.log(this.pencil);
 };
-this.graphite = function () {
+this.graphite = () => {
   this.pencil = pencils[1];
   console.log(this.pencil);
 
 };
-this.walnut = function() {
+this.walnut = () => {
   this.pencil = pencils[2];
   console.log(this.pencil);
-
 };
+
 this.addToCart = (pencil) => {
 console.log('service to cart: ');
 console.log(pencil);
 }
 
+
+
+
+
+//==END=====
 })
