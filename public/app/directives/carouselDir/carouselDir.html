@@ -1,0 +1,41 @@
+<section class='carousel-wrapper'>
+  <!-- <img class='background-image' src="{{pencil.images[0]}}" alt="stylus pencil by fiftythree" /> -->
+  <div style="background: url('{{pencil.images[0]}}'); background-size: cover" class="carousel-bg-img">
+    <div class="order-status-bar">
+      <div class="shop">Shop</div>
+      <div class="order-container">
+        <div class="order-status">Order Status</div>
+        <div class='bag-icon'></div>
+        <div class="items">Items</div>
+      </div>
+    </div>
+    <div class="right-side-nav">
+      <div class="right-nav-wrap">
+        <div class="pencil">Pencil</div>
+        <div class="digital-stylus">Digital stylus for iPad, iPad Pro, and iPhone</div>
+        <div class="pencil-name">{{pencil.name}}</div>
+        <div class="price">{{pencil.price | currency}}</div>
+        <div class="shipping">Free Shipping to US & Canada</div>
+        <div class="gold-graph-wal">
+          <div ng-click='gold()'>
+            <img class="gold gold-h" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_gold.png?1246397996584665470" alt="gold" />
+          </div>
+          <div ng-click='graphite()'>
+            <img class="graphite" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_graphite.png?1246397996584665470" alt="grpahite" />
+          </div>
+          <div ng-click='walnut()'>
+            <img class='walnut' src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_walnut.png?1246397996584665470" alt="walnut" />
+          </div>
+        </div>
+        <div class="shipping-to">Shipping to:</div>
+        <div class="americas-wrapper">
+          <div class="globe"></div>
+          <div class="drop-down-menu"></div>
+        </div>
+        <div class="add-to-cart">Add to cart > </div>
+        <div class="works-on"></div>
+      </div>
+    </div>
+  </div>
+</section>
+{{pencil}}

@@ -18,14 +18,9 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
     controller: 'shopCtrl'
   });
 });
-"use strict";
-"use strict";
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {
@@ -49,6 +44,77 @@ angular.module('fifty-three').service('shopService', function ($http, $q) {
     }).then(function (response) {
       return response.data;
     });
+  };
+});
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').directive('carouselDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/carouselDir/carouselDir.html',
+    controller: function controller($scope, carouselDirService) {
+
+      $scope.gold = function () {
+        console.log('gold dir');
+        carouselDirService.gold();
+        $scope.pencil = carouselDirService.pencil;
+      };
+      $scope.graphite = function () {
+        carouselDirService.graphite();
+        $scope.pencil = carouselDirService.pencil;
+      };
+      $scope.walnut = function () {
+        carouselDirService.walnut();
+        $scope.pencil = carouselDirService.pencil;
+      };
+      $scope.pencil = carouselDirService.pencil;
+
+      $(function () {
+        $('.gold').on('click', function () {
+          $('.gold').removeClass('gold-h');
+          $('.gold').addClass('selected');
+        });
+      });
+    }
+  };
+});
+'use strict';
+
+angular.module('fifty-three').service('carouselDirService', function ($http, $q) {
+
+  var gold = {
+    name: 'Gold',
+    price: 49.95,
+    images: ['./../../images/pencil-gold-1.jpg', './../../images/pencil-gold-2.jpg', './../../images/pencil-gold-3.jpg']
+  };
+  var graphite = {
+    name: 'Graphite',
+    price: 49.95,
+    images: ['./../../images/pencil-graphite-1.jpg', './../../images/pencil-graphite-2.jpg', './../../images/pencil-graphite-3.jpg']
+  };
+  var walnut = {
+    name: 'Walnut + Magnetic Snap',
+    price: 59.95,
+    images: ['./../../images/pencil-walnut-1.jpg', './../../images/pencil-walnut-2.jpg', './../../images/pencil-walnut-3.jpg']
+  };
+  var pencils = [gold, graphite, walnut];
+  this.pencil = pencils[0];
+  this.gold = function () {
+    console.log('gold service');
+    this.pencil = pencils[0];
+    console.log(this.pencil);
+  };
+  this.graphite = function () {
+    this.pencil = pencils[1];
+    console.log(this.pencil);
+  };
+  this.walnut = function () {
+    this.pencil = pencils[2];
+    console.log(this.pencil);
   };
 });
 'use strict';
