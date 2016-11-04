@@ -27,6 +27,7 @@ const productsCtrl = require('./productsCtrl');
 
 // ===ENDPOINTS============================
 app.get('/api/products', productsCtrl.getProducts);
+app.get('/api/cart', productsCtrl.getCart);
 
 
 

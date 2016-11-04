@@ -24,13 +24,61 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
 });
 'use strict';
 
-angular.module('fifty-three').controller('cartCtrl', function ($scope) {
+angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService) {
+
+  $scope.fake = [{
+    name: 'Pencil',
+    price: 49.95,
+    desc: 'Gold',
+    quantity: 1,
+    image: './../../images/pencil-gold-graylightest_medium.jpg'
+  }, {
+    name: 'Pencil',
+    price: 59.95,
+    desc: 'Walnut',
+    quantity: 1,
+    image: './../../images/pencil-walnut-graylightest_medium.jpg'
+  }, {
+    name: 'Pencil',
+    price: 59.95,
+    desc: 'Walnut',
+    quantity: 2,
+    image: './../../images/pencil-walnut-graylightest_medium.jpg'
+  }, {
+    name: 'Pencil',
+    price: 59.95,
+    desc: 'Walnut',
+    quantity: 5,
+    image: './../../images/pencil-walnut-graylightest_medium.jpg'
+  }];
+
+  $scope.getCart = function () {
+    cartService.getCart().then(function (response) {
+      console.log('cartCtrl: ');
+      console.log(response);
+      $scope.cart = response;
+    });
+  };
+  $scope.getCart();
+
+  $scope.subtotal = function () {};
 
   //===END CTRL=======
 });
 'use strict';
 
 angular.module('fifty-three').service('cartService', function ($http, $q) {
+
+  this.getCart = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/cart'
+    }).then(function (response) {
+      console.log('cart service: ');
+      console.log(response);
+      return response.data;
+    });
+  };
 
   //===END SERVICE=======
 });

@@ -1,15 +1,46 @@
-<section class="cart-nav-wrapper">
-  <nav class="nav-container">
-    <div class="logo-container">
-      <img class="logo" src="http://fiftythree.com/assets/images/logos/53-dark.svg" alt="company logo" />
+<nav-dir></nav-dir>
+<main class="cart-outer-wrapper" ng-controller='cartCtrl'>
+  <section class="cart-wrapper">
+    <div class="your-cart">Your cart</div>
+    <div class="pqt-wrapper">
+      <div class="price">Price</div>
+      <div class="quantity">Quantity</div>
+      <div class="total">Total</div>
     </div>
-    <div class="links-container">
-      <div class="paper" ui-sref='paper'>PAPER</div>
-      <div class="pencil" ui-sref='pencil'>PENCIL</div>
-      <div class="shop" ui-sref='shop'>SHOP</div>
-      <a href='https://itunes.apple.com/us/app/id506003812?mt=8' target='_blank' class="download">DOWNLOAD</a>
-      <img class='facebook' src="http://www.fiftythree.com/assets/images/icons/facebook-dark.svg" alt="facebook logo" />
-      <img class='twitter' src="http://www.fiftythree.com/assets/images/icons/twitter-dark.svg" alt="twitter logo" />
+    <hr>
+    <!-- ▼ NG_REPEAT OVER THIS DIV ▼ -->
+    <div class="cart-item-wrapper" ng-repeat='item in cart'>
+      <div class="item-inner-wrapper">
+        <div class="thumbnail-wrap">
+          <img class='thumbnail' ng-src="{{item.thumbnail}}" style='height: 100px; width: 100px' alt="{{item.name}}" />
+        </div>
+        <div class="name-wrapper">
+          <div class="item-name">{{item.name}}</div>
+          <div class="item-desc">{{item.prod_desc}}</div>
+        </div>
+        <div class="price">{{item.price | currency}}</div>
+        <div class="qty">{{item.qty}}</div>
+        <div class="add-sub-wrap">
+          <div class="sub"></div>
+          <div class="add"></div>
+        </div>
+        <div class="item-total">{{item.price * item.qty | currency}}</div>
+      </div>
+      <hr>
     </div>
-  </nav>
-</section>
+    <div class="total-wrap">
+      <div class="total">Total</div>
+      <div class="total-num"></div>
+    </div>
+    <div class="checkout-wrap">
+      <div class="shipping-wrap">
+        <div class="shipping-to">Shipping to:</div>
+        <div class="country-wrap">
+          <div class="globe"></div>
+          <div class="country"></div>
+          <div class="menu"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

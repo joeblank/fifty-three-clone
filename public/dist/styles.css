@@ -1,51 +1,64 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
-.cart-nav-wrapper {
-  font-family: "Roboto", sans-serif; }
-  .cart-nav-wrapper .nav-container {
-    width: 100%;
-    height: 100px;
-    background: #FFFCF5;
-    display: flex; }
-    .cart-nav-wrapper .nav-container .logo-container .logo {
-      width: 55px;
-      height: 55px;
-      margin-left: 20.5vw;
-      margin-top: 22px; }
-    .cart-nav-wrapper .nav-container .links-container {
-      color: #66625B;
-      position: absolute;
-      top: 37px;
-      right: 75px;
+.cart-outer-wrapper {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #FFFCF5; }
+  .cart-outer-wrapper .cart-wrapper {
+    width: 900px; }
+    .cart-outer-wrapper .cart-wrapper .your-cart {
+      font-size: 60px;
+      font-weight: bold;
+      color: #A49E93;
+      text-align: left; }
+    .cart-outer-wrapper .cart-wrapper .pqt-wrapper {
+      display: flex;
+      justify-content: flex-end; }
+      .cart-outer-wrapper .cart-wrapper .pqt-wrapper .price {
+        margin: 0 100px 0 0; }
+      .cart-outer-wrapper .cart-wrapper .pqt-wrapper .quantity {
+        margin: 0 100px 0 0; }
+      .cart-outer-wrapper .cart-wrapper .pqt-wrapper .total {
+        margin: 0 60px 0 0; }
+    .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper {
       display: flex;
       align-items: center; }
-      .cart-nav-wrapper .nav-container .links-container .paper {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .cart-nav-wrapper .nav-container .links-container .pencil {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .cart-nav-wrapper .nav-container .links-container .shop {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .cart-nav-wrapper .nav-container .links-container .download {
-        margin: 0 30px 0 0;
-        border: solid 2px #66625B;
-        border-radius: 100px;
-        padding: 8px 15px;
-        text-decoration: none;
-        color: #66625B; }
-      .cart-nav-wrapper .nav-container .links-container .download:hover {
-        background: #66625B;
-        color: white; }
-      .cart-nav-wrapper .nav-container .links-container .facebook {
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 5px 0 0; }
-      .cart-nav-wrapper .nav-container .links-container .twitter {
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .thumbnail-wrap {
+        width: 100px;
+        height: 100px; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .name-wrapper {
+        width: 200px;
+        margin: 0 0 0 75px; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .price {
+        width: 75px;
+        margin: 0 0 0 128px; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .qty {
+        width: 20px;
+        margin: 0 0 0 35px; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .add-sub-wrap {
+        display: flex;
+        margin: 0 0 0 0px; }
+        .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .add-sub-wrap .sub {
+          width: 45px;
+          height: 35px;
+          margin-right: -3px;
+          background: url("https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/minus.svg?17955204280943109837");
+          background-repeat: no-repeat;
+          background-position: center;
+          border: solid 2px #A59F93;
+          border-radius: 7px 0 0 7px; }
+        .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .add-sub-wrap .add {
+          width: 45px;
+          height: 35px;
+          background: url("https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/plus.svg?17955204280943109837");
+          background-repeat: no-repeat;
+          background-position: center;
+          border: solid 2px #A59F93;
+          border-radius: 0 7px 7px 0; }
+      .cart-outer-wrapper .cart-wrapper .cart-item-wrapper .item-inner-wrapper .item-total {
+        width: 100px;
+        margin: 0 0 0 77px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .paper-main-container {
@@ -319,6 +332,104 @@
         opacity: .27; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px; }
+  .outer-wrapper .upper-wrapper {
+    display: flex;
+    align-items: center; }
+    .outer-wrapper .upper-wrapper .links-wrapper {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      font-size: 15px; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
+        display: flex;
+        flex-direction: column; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
+          cursor: pointer; }
+    .outer-wrapper .upper-wrapper .social-wrapper {
+      margin: 0px 90px; }
+      .outer-wrapper .upper-wrapper .social-wrapper a {
+        text-decoration: none; }
+      .outer-wrapper .upper-wrapper .social-wrapper .fb {
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        opacity: .27; }
+      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 0 0 5px; }
+    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
+      color: #66625B;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      font-size: 18px;
+      display: flex;
+      align-items: center; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
+        cursor: pointer; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
+        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
+        background-size: contain;
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 10px;
+        cursor: pointer; }
+  .outer-wrapper .lower-wrapper {
+    font-size: 14px;
+    display: flex;
+    margin: 40px 0 0 0; }
+    .outer-wrapper .lower-wrapper .copy-right {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      margin: 0 10px 0 0; }
+    .outer-wrapper .lower-wrapper .links a {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      text-decoration: none;
+      color: #66625B;
+      margin: 0 0 0 10px; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .carousel-wrapper {
   position: relative;
   width: 100%;
@@ -432,104 +543,6 @@
         .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .works-on {
           font-size: 15px;
           font-weight: lighter; }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
-.outer-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0px; }
-  .outer-wrapper .upper-wrapper {
-    display: flex;
-    align-items: center; }
-    .outer-wrapper .upper-wrapper .links-wrapper {
-      display: flex;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      font-size: 15px; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
-        display: flex;
-        flex-direction: column; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
-          cursor: pointer; }
-    .outer-wrapper .upper-wrapper .social-wrapper {
-      margin: 0px 90px; }
-      .outer-wrapper .upper-wrapper .social-wrapper a {
-        text-decoration: none; }
-      .outer-wrapper .upper-wrapper .social-wrapper .fb {
-        background-size: contain;
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
-      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
-        background-size: 30px;
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 0 0 5px; }
-    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
-      color: #66625B;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      font-size: 18px;
-      display: flex;
-      align-items: center; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
-        cursor: pointer; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
-        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
-        background-size: contain;
-        width: 36px;
-        height: 36px;
-        margin: 0 0 0 10px;
-        cursor: pointer; }
-  .outer-wrapper .lower-wrapper {
-    font-size: 14px;
-    display: flex;
-    margin: 40px 0 0 0; }
-    .outer-wrapper .lower-wrapper .copy-right {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      margin: 0 10px 0 0; }
-    .outer-wrapper .lower-wrapper .links a {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      text-decoration: none;
-      color: #66625B;
-      margin: 0 0 0 10px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .nav-dir-wrapper {
