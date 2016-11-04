@@ -12,13 +12,13 @@ const app = module.exports = express();
 
 //===MIDDLEWARE===========================
 app.use(bodyParser.json());
-app.use(express.static('./../public'));
+app.use(express.static(__dirname + '/../public'));
 app.use(cors());
 
 //===CONNECT TO POSTGRESS SERVER===========
 const massiveServer = massive.connectSync({
   connectionString: 'postgress://localhost/fifty-three-clone'
-})
+});
 app.set('db', massiveServer);
 const db = app.get('db');
 

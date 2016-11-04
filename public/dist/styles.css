@@ -332,104 +332,6 @@
         opacity: .27; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
-.outer-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0px; }
-  .outer-wrapper .upper-wrapper {
-    display: flex;
-    align-items: center; }
-    .outer-wrapper .upper-wrapper .links-wrapper {
-      display: flex;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      font-size: 15px; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
-        display: flex;
-        flex-direction: column; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
-          cursor: pointer; }
-    .outer-wrapper .upper-wrapper .social-wrapper {
-      margin: 0px 90px; }
-      .outer-wrapper .upper-wrapper .social-wrapper a {
-        text-decoration: none; }
-      .outer-wrapper .upper-wrapper .social-wrapper .fb {
-        background-size: contain;
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
-      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
-        background-size: 30px;
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 0 0 5px; }
-    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
-      color: #66625B;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      font-size: 18px;
-      display: flex;
-      align-items: center; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
-        cursor: pointer; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
-        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
-        background-size: contain;
-        width: 36px;
-        height: 36px;
-        margin: 0 0 0 10px;
-        cursor: pointer; }
-  .outer-wrapper .lower-wrapper {
-    font-size: 14px;
-    display: flex;
-    margin: 40px 0 0 0; }
-    .outer-wrapper .lower-wrapper .copy-right {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      margin: 0 10px 0 0; }
-    .outer-wrapper .lower-wrapper .links a {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      text-decoration: none;
-      color: #66625B;
-      margin: 0 0 0 10px; }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 .carousel-wrapper {
   position: relative;
   width: 100%;
@@ -543,6 +445,104 @@
         .carousel-wrapper .carousel-bg-img .right-side-nav .right-nav-wrap .works-on {
           font-size: 15px;
           font-weight: lighter; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px; }
+  .outer-wrapper .upper-wrapper {
+    display: flex;
+    align-items: center; }
+    .outer-wrapper .upper-wrapper .links-wrapper {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      font-size: 15px; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
+        display: flex;
+        flex-direction: column; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
+          cursor: pointer; }
+    .outer-wrapper .upper-wrapper .social-wrapper {
+      margin: 0px 90px; }
+      .outer-wrapper .upper-wrapper .social-wrapper a {
+        text-decoration: none; }
+      .outer-wrapper .upper-wrapper .social-wrapper .fb {
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        opacity: .27; }
+      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 0 0 5px; }
+    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
+      color: #66625B;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      font-size: 18px;
+      display: flex;
+      align-items: center; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
+        cursor: pointer; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
+        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
+        background-size: contain;
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 10px;
+        cursor: pointer; }
+  .outer-wrapper .lower-wrapper {
+    font-size: 14px;
+    display: flex;
+    margin: 40px 0 0 0; }
+    .outer-wrapper .lower-wrapper .copy-right {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      margin: 0 10px 0 0; }
+    .outer-wrapper .lower-wrapper .links a {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      text-decoration: none;
+      color: #66625B;
+      margin: 0 0 0 10px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .nav-dir-wrapper {

@@ -7,9 +7,9 @@ const nodemon = require('gulp-nodemon');
 // const annotate = require('gulp-ng-annotate');
 
 const paths = {
-  jsSource: ['./app/app.js', './app/**/*.js'],
-  scssSource: ['./app/**/*.scss'],
-  server: ['./../server/server.js']
+  jsSource: ['./public/app/app.js', './public/app/**/*.js'],
+  scssSource: ['./public/app/**/*.scss'],
+  server: ['./server/server.js']
 };
 
 gulp.task('serve', () => {
@@ -26,14 +26,14 @@ gulp.task('js-bundle', () => {
   }))
   .pipe(concat('all.js'))
   .pipe(sourcemap.write('./'))
-  .pipe(gulp.dest('./dist'))
+  .pipe(gulp.dest('./public/dist'))
 });
 
 gulp.task('scss-bundle', () => {
   gulp.src(paths.scssSource)
   .pipe(sass())
   .pipe(concat('styles.css'))
-  .pipe(gulp.dest('./dist'))
+  .pipe(gulp.dest('./public/dist'))
 });
 
 gulp.task('watch', () => {

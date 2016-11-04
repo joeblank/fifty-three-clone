@@ -34,7 +34,7 @@ $scope.fake = [
   },
 ]
 
-
+//===GET CART====
 $scope.getCart = () => {
   cartService.getCart()
   .then((response) => {
@@ -44,12 +44,22 @@ $scope.getCart = () => {
   })
 }
 $scope.getCart();
+//===CHANGE QTY OF ITEM========
+$scope.sub = (item)=> {
 
+  cartService.sub(item);
+}
+$scope.add= (item)=> {
+  cartService.add(item);
+}
+//===SUBTOTAL==============
 $scope.subtotal = () => {
 
 }
 
-
+$scope.log = (item) => {
+  console.log(item.qty)
+}
 
 
 

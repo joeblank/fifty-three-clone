@@ -21,8 +21,8 @@
         <div class="price">{{item.price | currency}}</div>
         <div class="qty">{{item.qty}}</div>
         <div class="add-sub-wrap">
-          <div class="sub"></div>
-          <div class="add"></div>
+          <div class="sub" ng-click='item.qty - 1; log(item)'></div>
+          <div class="add" ng-click='item.qty + 1'></div>
         </div>
         <div class="item-total">{{item.price * item.qty | currency}}</div>
       </div>

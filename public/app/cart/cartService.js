@@ -12,6 +12,16 @@ angular.module('fifty-three')
     })
   }
 
+  this.sub = (item)=> {
+    return $http({
+      method: 'PUT',
+      url: '/api/update-cart',
+      data: {
+        id: item.id,
+        qty: item.qty
+      }
+    })
+  }
 
 
 

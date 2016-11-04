@@ -52,6 +52,7 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
     image: './../../images/pencil-walnut-graylightest_medium.jpg'
   }];
 
+  //===GET CART====
   $scope.getCart = function () {
     cartService.getCart().then(function (response) {
       console.log('cartCtrl: ');
@@ -60,8 +61,20 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
     });
   };
   $scope.getCart();
+  //===CHANGE QTY OF ITEM========
+  $scope.sub = function (item) {
 
+    cartService.sub(item);
+  };
+  $scope.add = function (item) {
+    cartService.add(item);
+  };
+  //===SUBTOTAL==============
   $scope.subtotal = function () {};
+
+  $scope.log = function (item) {
+    console.log(item.qty);
+  };
 
   //===END CTRL=======
 });
@@ -77,6 +90,17 @@ angular.module('fifty-three').service('cartService', function ($http, $q) {
       console.log('cart service: ');
       console.log(response);
       return response.data;
+    });
+  };
+
+  this.sub = function (item) {
+    return $http({
+      method: 'PUT',
+      url: '/api/update-cart',
+      data: {
+        id: item.id,
+        qty: item.qty
+      }
     });
   };
 
