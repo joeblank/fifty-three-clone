@@ -20,7 +20,7 @@
             <img class="gold selected" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_gold.png?1246397996584665470" alt="gold" />
           </div>
           <div ng-click='graphite()'>
-            <img class="graphite graphite-h" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_graphite.png?1246397996584665470" alt="grpahite" />
+            <img class="graphite graphite-h" src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_graphite.png?1246397996584665470" alt="graphite" />
           </div>
           <div ng-click='walnut()'>
             <img class='walnut walnut-h' src="https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_walnut.png?1246397996584665470" alt="walnut" />
@@ -32,7 +32,7 @@
           <div class="drop-down-menu"></div>
         </div>
         <div class="add-to-cart" ui-sref='cart' ng-click='addToCart(pencil)'>Add to cart</div>
-        <button type="button" name="button">sign-in</button>
+        <button ng-click='hideModal=false' type="button" name="button">sign-in</button>
         <div class="works-on">Works on iPad3, 4, Air (all), mini (all),
           iPad Pro, and iPhone 42 and above</div>
       </div>
@@ -40,12 +40,48 @@
   </div>
 </section>
 {{pencil}}
-<form ng-submit="login(user)">
-  Email: <input type="email" ng-model="user.email" required/>
-  Password: <input type="password" ng-model="user.password" required/>
-  <button type="submit">login</button>
-</form>
-<br><br><br>
+
+<!-- //===SIGN-IN MODAL====================== -->
+<section ng-hide='hideModal' ng-click='hideModal=true' class="modal-outer-wrapper">
+  <div ng-click='$event.stopPropagation()' class="modal-container">
+    <div class="upper-wrapper">
+      <div class="sign-in">SIGN IN</div>
+      <form ng-submit='login(user)' class="email-pass-container">
+        <div class="email-pass-wrapper">
+          <div class="email-wrap">
+            <div class='email'>Email:</div>
+            <div class="password">Password:</div>
+          </div>
+          <div class="password-wrap">
+            <input type="text" ng-model='user.email' required>
+            <input type="password" ng-model='user.password' required>
+          </div>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <div class="lower-wrapper">
+      <div class="sign-up">SIGN UP</div>
+      <form class="form-wrapper" ng-submit='register(newUser)'>
+        <div class="outer-container">
+          <div class="name-wrap">
+            <div class="name">Name:</div>
+            <div class="email">Email:</div>
+            <div class="password">Password:</div>
+          </div>
+          <div class="input-wrap">
+            <input type="text" ng-model='newUser.name' required>
+            <input type="text" ng-model='newUser.email' required>
+            <input type="password" ng-model='newUser.password' required>
+          </div>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
 <form ng-submit="register(newUser)">
   Name: <input type="text" ng-model="newUser.name" required/>
   Email: <input type="email" ng-model="newUser.email" required/>

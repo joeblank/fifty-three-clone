@@ -6,6 +6,8 @@ angular.module('fifty-three')
     templateUrl: './app/directives/carouselDir/carouselDir.html',
     controller: ($scope, carouselDirService, authService) => {
 
+      $scope.hideModal = true;
+
       $scope.gold = () => {
         console.log('gold dir')
         carouselDirService.gold();
