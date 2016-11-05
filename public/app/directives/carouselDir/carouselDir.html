@@ -32,6 +32,7 @@
           <div class="drop-down-menu"></div>
         </div>
         <div class="add-to-cart" ui-sref='cart' ng-click='addToCart(pencil)'>Add to cart</div>
+        <button type="button" name="button">sign-in</button>
         <div class="works-on">Works on iPad3, 4, Air (all), mini (all),
           iPad Pro, and iPhone 42 and above</div>
       </div>
@@ -39,3 +40,15 @@
   </div>
 </section>
 {{pencil}}
+<form ng-submit="login(user)">
+  Email: <input type="email" ng-model="user.email" required/>
+  Password: <input type="password" ng-model="user.password" required/>
+  <button type="submit">login</button>
+</form>
+<br><br><br>
+<form ng-submit="register(newUser)">
+  Name: <input type="text" ng-model="newUser.name" required/>
+  Email: <input type="email" ng-model="newUser.email" required/>
+  Password: <input type="password" ng-model="newUser.password" required/>
+  <button type="submit">Register</button>
+</form>

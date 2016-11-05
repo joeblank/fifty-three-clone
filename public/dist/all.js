@@ -24,6 +24,20 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
 });
 'use strict';
 
+angular.module('fifty-three').service('authService', function ($http) {
+
+  this.registerUser = function (user) {
+    return $http({
+      method: 'POST',
+      url: '/register',
+      data: user
+    }).then(function (response) {
+      return response;
+    });
+  };
+});
+'use strict';
+
 angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService) {
 
   $scope.fake = [{
@@ -144,7 +158,7 @@ angular.module('fifty-three').directive('carouselDir', function () {
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: function controller($scope, carouselDirService) {
+    controller: function controller($scope, carouselDirService, authService) {
 
       $scope.gold = function () {
         console.log('gold dir');
@@ -165,6 +179,19 @@ angular.module('fifty-three').directive('carouselDir', function () {
         console.log('controller to service: ');
         console.log(pencil);
         carouselDirService.addToCart(pencil);
+      };
+
+      $scope.register = function (user) {
+        authService.registerUser(user).then(function (response) {
+          if (!response.data) {
+            alert('unable to create user');
+          } else {
+            alert('user created');
+            $scope.newUser = {};
+          }
+        }).catch(function (err) {
+          alert('unable to create user');
+        });
       };
       //===JQUERY==================================
       $(function () {

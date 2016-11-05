@@ -21,6 +21,7 @@
   "homepage": "https://github.com/joeblank/fifty-three-clone#readme",
   "dependencies": {
     "bcrypt": "^0.8.7",
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
@@ -33,7 +34,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
     "massive": "^2.5.0",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

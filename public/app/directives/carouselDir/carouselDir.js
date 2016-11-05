@@ -4,7 +4,7 @@ angular.module('fifty-three')
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: ($scope, carouselDirService) => {
+    controller: ($scope, carouselDirService, authService) => {
 
       $scope.gold = () => {
         console.log('gold dir')
@@ -25,7 +25,20 @@ angular.module('fifty-three')
         console.log('controller to service: ');
         console.log(pencil);
         carouselDirService.addToCart(pencil);
-      }
+      };
+
+      $scope.register = (user) => {
+        authService.registerUser(user).then((response) => {
+          if (!response.data) {
+            alert('unable to create user');
+          } else {
+            alert('user created');
+            $scope.newUser = {};
+          }
+        }).catch((err) => {
+          alert('unable to create user');
+        });
+      };
       //===JQUERY==================================
       $(() =>  {
         $('.gold').on('click', () => {

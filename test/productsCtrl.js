@@ -21,11 +21,12 @@ describe('productsCtrl', () => {
     chai.request(server)
     .get('/api/products')
     .end((err, res) => {
-      consol.log(res.body);
+      console.log(res.body);
       expect(res).to.be.ok;
       expect(res).to.have.status(200);
       expect(res.body).to.be.a('array');
       expect(res.body[0].name).to.equal('Pencil');
+      done();
     })
   })
 
