@@ -199,56 +199,11 @@
         .paper-main-container .lower-wrapper .img-wrapper .lower-text-wrapper a:hover {
           opacity: .7; }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .main-container {
   width: 100%;
   font-family: "Roboto", sans-serif;
   position: relative; }
-  .main-container .nav-container {
-    width: 100%;
-    height: 100px;
-    background: #FFFCF5;
-    display: flex; }
-    .main-container .nav-container .logo-container .logo {
-      width: 55px;
-      height: 55px;
-      margin-left: 150px;
-      margin-top: 22px; }
-    .main-container .nav-container .links-container {
-      color: #66625B;
-      position: absolute;
-      top: 37px;
-      right: 75px;
-      display: flex;
-      align-items: center; }
-      .main-container .nav-container .links-container .paper {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .main-container .nav-container .links-container .pencil {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .main-container .nav-container .links-container .shop {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .main-container .nav-container .links-container .download {
-        margin: 0 30px 0 0;
-        border: solid 2px #66625B;
-        border-radius: 100px;
-        padding: 8px 15px;
-        text-decoration: none;
-        color: #66625B; }
-      .main-container .nav-container .links-container .download:hover {
-        background: #66625B;
-        color: white; }
-      .main-container .nav-container .links-container .facebook {
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 5px 0 0; }
-      .main-container .nav-container .links-container .twitter {
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
   .main-container .mid-wrapper {
     background: url("http://www.fiftythree.com/assets/images/pencil/pencil-bg.jpg") no-repeat 46%;
     background-size: auto 750px;
@@ -281,6 +236,263 @@
           background: #B33C12; }
         .main-container .mid-wrapper .mid-text .amazon-wrap .alsoAt {
           cursor: pointer; }
+
+.for-ideas-outer-wrap {
+  width: 100%;
+  height: 740px;
+  background: linear-gradient(to right, #212120 0%, #424240 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative; }
+  .for-ideas-outer-wrap .for-ideas {
+    text-align: center;
+    font-size: 80px;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    margin-top: 82px;
+    line-height: 1.1; }
+  .for-ideas-outer-wrap .apple-new {
+    width: 635px;
+    margin-top: 40px;
+    font-size: 27px;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.2;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter; }
+  .for-ideas-outer-wrap .wired-magazine {
+    margin-top: 18px;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    z-index: 10; }
+  .for-ideas-outer-wrap .tablet-image {
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    bottom: 0;
+    background: url("http://www.fiftythree.com/assets/images/pencil/devices.png") no-repeat center;
+    background-size: cover;
+    margin-top: 10px; }
+
+.freedom-outer-wrap {
+  background: #fffbf5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #66625B;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #e0e0e0; }
+  .freedom-outer-wrap .tablet-pencil-bg {
+    background: url("http://www.fiftythree.com/assets/images/pencil/expression@1.5x.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 600px; }
+  .freedom-outer-wrap .freedom {
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    font-size: 80px;
+    text-align: center;
+    width: 493px; }
+  .freedom-outer-wrap .great-tools {
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    text-align: center;
+    width: 750px;
+    margin: 40px 0 100px 0;
+    line-height: 1.1; }
+
+.sp-outer-wrap {
+  background: #fffbf5; }
+  .sp-outer-wrap .surface-pressure-wrapper {
+    position: relative;
+    background-color: #fffbf5;
+    background: url("http://www.fiftythree.com/assets/images/pencil/example-surface-pressure.jpg") no-repeat center;
+    width: 100%;
+    height: 560px;
+    border-bottom: solid 1px #e0e0e0; }
+    .sp-outer-wrap .surface-pressure-wrapper .surface-pressure {
+      position: absolute;
+      top: 86px;
+      left: 230px;
+      width: 229px;
+      display: flex;
+      flex-direction: column; }
+      .sp-outer-wrap .surface-pressure-wrapper .surface-pressure .icon {
+        width: 138px;
+        height: 140px;
+        background: url("http://www.fiftythree.com/assets/images/pencil/icons/pencil-icons-sprite-surface.svg") no-repeat;
+        background-position: 50% 73.5%;
+        background-size: 350px auto; }
+      .sp-outer-wrap .surface-pressure-wrapper .surface-pressure .title {
+        font-size: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        color: #66625B;
+        margin: 10px 0; }
+      .sp-outer-wrap .surface-pressure-wrapper .surface-pressure .text {
+        font-size: 20px;
+        line-height: 1.1;
+        font-family: "Roboto", sans-serif;
+        font-weight: lighter;
+        color: #66625B; }
+
+.erase-outer-wrap {
+  background: #fffbf5; }
+  .erase-outer-wrap .erase-wrapper {
+    position: relative;
+    background-color: #fffbf5;
+    background: url("http://www.fiftythree.com/assets/images/pencil/example-erase.jpg") no-repeat center;
+    width: 100%;
+    height: 560px;
+    border-bottom: solid 1px #e0e0e0; }
+    .erase-outer-wrap .erase-wrapper .erase {
+      position: absolute;
+      top: 86px;
+      left: 230px;
+      width: 229px;
+      display: flex;
+      flex-direction: column; }
+      .erase-outer-wrap .erase-wrapper .erase .icon {
+        width: 138px;
+        height: 140px;
+        background: url("http://www.fiftythree.com/assets/images/pencil/icons/pencil-icons-sprite-surface.svg") no-repeat;
+        background-position: 50% 24.5%;
+        background-size: 350px auto; }
+      .erase-outer-wrap .erase-wrapper .erase .title {
+        font-size: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        color: #66625B;
+        margin: 10px 0; }
+      .erase-outer-wrap .erase-wrapper .erase .text {
+        font-size: 20px;
+        line-height: 1.1;
+        font-family: "Roboto", sans-serif;
+        font-weight: lighter;
+        color: #66625B; }
+
+.blend-outer-wrap {
+  background: #fffbf5; }
+  .blend-outer-wrap .blend-wrapper {
+    position: relative;
+    background-color: #fffbf5;
+    background: url("http://www.fiftythree.com/assets/images/pencil/example-blend.jpg") no-repeat center;
+    width: 100%;
+    height: 560px;
+    border-bottom: solid 1px #e0e0e0; }
+    .blend-outer-wrap .blend-wrapper .blend {
+      position: absolute;
+      top: 86px;
+      left: 230px;
+      width: 229px;
+      display: flex;
+      flex-direction: column; }
+      .blend-outer-wrap .blend-wrapper .blend .icon {
+        width: 138px;
+        height: 140px;
+        background: url("http://www.fiftythree.com/assets/images/pencil/icons/pencil-icons-sprite-surface.svg") no-repeat;
+        background-position: 50% 0%;
+        background-size: 350px auto; }
+      .blend-outer-wrap .blend-wrapper .blend .title {
+        font-size: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        color: #66625B;
+        margin: 10px 0; }
+      .blend-outer-wrap .blend-wrapper .blend .text {
+        font-size: 20px;
+        line-height: 1.1;
+        font-family: "Roboto", sans-serif;
+        font-weight: lighter;
+        color: #66625B; }
+
+.palm-outer-wrap {
+  background: #fffbf5; }
+  .palm-outer-wrap .palm-wrapper {
+    position: relative;
+    background-color: #fffbf5;
+    background: url("http://www.fiftythree.com/assets/images/pencil/example-palm-rejection.jpg") no-repeat center;
+    width: 100%;
+    height: 560px;
+    border-bottom: solid 1px #e0e0e0; }
+    .palm-outer-wrap .palm-wrapper .palm {
+      position: absolute;
+      top: 86px;
+      left: 230px;
+      width: 229px;
+      display: flex;
+      flex-direction: column; }
+      .palm-outer-wrap .palm-wrapper .palm .icon {
+        width: 138px;
+        height: 140px;
+        background: url("http://www.fiftythree.com/assets/images/pencil/icons/pencil-icons-sprite-surface.svg") no-repeat;
+        background-position: 50% 12.5%;
+        background-size: 350px auto; }
+      .palm-outer-wrap .palm-wrapper .palm .title {
+        font-size: 22px;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        color: #66625B;
+        margin: 10px 0; }
+      .palm-outer-wrap .palm-wrapper .palm .text {
+        font-size: 20px;
+        line-height: 1.1;
+        font-family: "Roboto", sans-serif;
+        font-weight: lighter;
+        color: #66625B; }
+
+.walnut-aluminum-wrap {
+  width: 100%;
+  height: 110vh;
+  display: flex; }
+  .walnut-aluminum-wrap .walnut-wrap {
+    width: 50%;
+    background: url("http://www.fiftythree.com/assets/images/pencil/material-walnut@1.5x.jpg") no-repeat;
+    background-position: 98% 50%;
+    background-size: auto 765px;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    color: white;
+    position: relative; }
+    .walnut-aluminum-wrap .walnut-wrap .walnut {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      width: 180px; }
+      .walnut-aluminum-wrap .walnut-wrap .walnut .title {
+        font-size: 22px;
+        font-weight: bold; }
+      .walnut-aluminum-wrap .walnut-wrap .walnut .text {
+        margin-top: 10px;
+        font-size: 22px;
+        line-height: 1.1; }
+  .walnut-aluminum-wrap .aluminum-wrap {
+    width: 50%;
+    background: url("http://www.fiftythree.com/assets/images/pencil/material-graphite@1.5x.jpg") no-repeat;
+    background-position: 45% 50%;
+    background-size: auto 765px;
+    font-family: "Roboto", sans-serif;
+    font-weight: lighter;
+    color: white;
+    position: relative; }
+    .walnut-aluminum-wrap .aluminum-wrap .aluminum {
+      position: absolute;
+      top: 80px;
+      right: 50%;
+      width: 180px; }
+      .walnut-aluminum-wrap .aluminum-wrap .aluminum .title {
+        font-size: 22px;
+        font-weight: bold; }
+      .walnut-aluminum-wrap .aluminum-wrap .aluminum .text {
+        margin-top: 10px;
+        font-size: 22px;
+        line-height: 1.1; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .shop-nav-wrapper {
