@@ -24,22 +24,33 @@ register: (req, res) => {
     res.status(200).send(user);
   });
 },
+me: (req, res) => {
+  if (!req.user) return res.status(401).send('current user not defined');
+
+  //remove password for security, do not send it back
+  let user = req.user[0];
+  console.log(user);
+  delete user.password;
+  console.log(user);
+  //return user object without passwordreturn
+  return res.status(200).json(user);
+}
 
 /////left off here
 
 
 //======for orig db====================
-  getProducts: (req, res) => {
-    db.get_products((err, response) => {
-      res.status(200).json(response);
-    })
-  },
-
-  getCart: (req, res) => {
-    db.get_cart((err, response) => {
-      res.status(200).json(response);
-    })
-  }
+  // getProducts: (req, res) => {
+  //   db.get_products((err, response) => {
+  //     res.status(200).json(response);
+  //   })
+  // },
+  //
+  // getCart: (req, res) => {
+  //   db.get_cart((err, response) => {
+  //     res.status(200).json(response);
+  //   })
+  // }
 
 
 }

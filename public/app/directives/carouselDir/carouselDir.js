@@ -4,7 +4,7 @@ angular.module('fifty-three')
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: ($scope, carouselDirService, authService) => {
+    controller: ($scope, carouselDirService, authService, $state) => {
 
       $scope.hideModal = true;
 
@@ -28,6 +28,19 @@ angular.module('fifty-three')
         console.log(pencil);
         carouselDirService.addToCart(pencil);
       };
+
+      $scope.login = (user) => {
+        authService.login(user).then((response) => {
+          if (!response.data) {
+            alert('User cannot be found');
+            $scope.user.password = '';
+          } else {
+            $state.go('cart');
+          }
+        }).catch((err) => {
+          alert('Unable to login');
+        })
+      }
 
       $scope.register = (user) => {
         authService.registerUser(user).then((response) => {

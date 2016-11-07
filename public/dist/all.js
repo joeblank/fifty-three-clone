@@ -35,6 +35,16 @@ angular.module('fifty-three').service('authService', function ($http) {
       return response;
     });
   };
+
+  this.login = function (user) {
+    return $http({
+      method: 'POST',
+      url: '/login',
+      data: user
+    }).then(function (response) {
+      return response;
+    });
+  };
 });
 'use strict';
 
@@ -255,21 +265,12 @@ angular.module('fifty-three').service('shopService', function ($http, $q) {
 });
 'use strict';
 
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
-});
-'use strict';
-
 angular.module('fifty-three').directive('carouselDir', function () {
 
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: function controller($scope, carouselDirService, authService) {
+    controller: function controller($scope, carouselDirService, authService, $state) {
 
       $scope.hideModal = true;
 
@@ -292,6 +293,19 @@ angular.module('fifty-three').directive('carouselDir', function () {
         console.log('controller to service: ');
         console.log(pencil);
         carouselDirService.addToCart(pencil);
+      };
+
+      $scope.login = function (user) {
+        authService.login(user).then(function (response) {
+          if (!response.data) {
+            alert('User cannot be found');
+            $scope.user.password = '';
+          } else {
+            $state.go('cart');
+          }
+        }).catch(function (err) {
+          alert('Unable to login');
+        });
       };
 
       $scope.register = function (user) {
@@ -388,6 +402,15 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
+});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
 });
 'use strict';
 

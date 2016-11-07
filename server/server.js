@@ -54,13 +54,13 @@ app.get('/logout', (req,res, next) => {
 //===USER ENDPOINTS=========================
 app.post('/register', productsCtrl.register);
 // app.get('/user', productsCtrl.read);
-// app.get('/me', isAuthed, productsCtrl.me);
+app.get('/me', isAuthed, productsCtrl.me);
 // app.put('/user/:_id', isAuthed, productsCtrl.update);
 
 
 // ===ENDPOINTS for orig db============================
-app.get('/api/products', productsCtrl.getProducts);
-app.get('/api/cart', productsCtrl.getCart);
+// app.get('/api/products', productsCtrl.getProducts);
+// app.get('/api/cart', productsCtrl.getCart);
 
 
 

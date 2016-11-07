@@ -1,16 +1,16 @@
 //PASSPORT
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 //BCRYPT
-var bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 //APP
-var app = require('./server');
-var db = app.get('db');
+const app = require('./server');
+const db = app.get('db');
 
 //VERIFY PASSWORD
-var verifyPassword = function(submittedPassword, userPassword) {
+const verifyPassword = (submittedPassword, userPassword) => {
   return bcrypt.compareSync(submittedPassword, userPassword);
 };
 
@@ -18,8 +18,8 @@ var verifyPassword = function(submittedPassword, userPassword) {
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
-}, function(email, password, done) {
-  db.user_search_email([email], function(err, user)  {
+}, (email, password, done) => {
+  db.user_search_email([email], (err, user) => {
     user = user[0];
 
     //if err, return err
@@ -38,11 +38,11 @@ passport.use(new LocalStrategy({
 }));
 
 //puts the user on the session
-passport.serializeUser(function(user, done)  {
+passport.serializeUser((user, done) =>  {
   done(null, user.id);
 });
-passport.deserializeUser(function(id, done)  {
-  db.user_search_id([id], function(err, user)  {
+passport.deserializeUser((id, done) => {
+  db.user_search_id([id], (err, user) => {
     done(err, user);
   });
 });

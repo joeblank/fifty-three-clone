@@ -11,5 +11,15 @@ angular.module('fifty-three')
     });
   };
 
+  this.login = (user) => {
+    return $http({
+      method: 'POST',
+      url: '/login',
+      data: user
+    }).then((response) => {
+      return response;
+    })
+  }
+
 
 })
