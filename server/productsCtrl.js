@@ -13,30 +13,50 @@ const hashPassword = (password) => {
 
 module.exports = {
 
-register: (req, res) => {
-  let user = req.body;
-  user.password = hashPassword(user.password);
+  getInCart: (req, res, next) => {
+    db.product_cart_find([req.params.cartid], (err, products) => {
+      if (err) {
+        return res.status(500).send(err);
+      };
+      res.status(200).send(products);
+    })
+  },
+  addToCart: (req,res, next) => {
+    const product = req.body;
 
-  db.user_create([user.name, user.email, user.password], (err, user) => {
-    if (err) return res.status(500).send(err);
+    db.product_cart_insert([req.params.cartid, product.id, product.qty], (err, productInCart) => {
+      if (err) {
+        return res.status(500).send(err);
+      };
+      res.status(200).send('Item added successfully');
+    })
+  },
+  updateProductInCart: (req, res, next) => {
+    db.product_cart_update([req.body.qty, req.params.productid], (err, productInCart) => {
+      if (err) {
+        return res.status(500).send(err);
+      };
+      res.status(200).send('Item update successfully');
+    });
+  },
+  deleteCartItem: (req,res, next) => {
+    db.product_cart_remove([req.params.productid], (err, product) => {
+      if (err) {
+        return res.status(500).send(err);
+      };
+      res.status(200).send('Item removed successfully');
+    });
+  },
+  getProducts: (req, res, next) => {
+    db.products((err, products) => {
+      if (err) {
+        return res.status(500).send(err);
+      };
+      res.status(200).send(products);
+    })
+  }
 
-    delete user.password;
-    res.status(200).send(user);
-  });
-},
-me: (req, res) => {
-  if (!req.user) return res.status(401).send('current user not defined');
 
-  //remove password for security, do not send it back
-  let user = req.user[0];
-  console.log(user);
-  delete user.password;
-  console.log(user);
-  //return user object without passwordreturn
-  return res.status(200).json(user);
-}
-
-/////left off here
 
 
 //======for orig db====================

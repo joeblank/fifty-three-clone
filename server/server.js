@@ -24,6 +24,8 @@ const db = app.get('db');
 
 //===REQUIRE CONTROLLERS(BELOW APP.SET)========
 const productsCtrl = require('./productsCtrl');
+const userCtrl = require('./userCtrl');
+const orderCtrl = require('./orderCtrl');
 //===REQUIRE PASSPORT==================
 const passport = require('./passport');
 
@@ -52,17 +54,30 @@ app.get('/logout', (req,res, next) => {
 });
 
 //===USER ENDPOINTS=========================
-app.post('/register', productsCtrl.register);
+///left off here monday nov 7th 12:29PM
+app.post('/register', userCtrl.register);
 // app.get('/user', productsCtrl.read);
-app.get('/me', isAuthed, productsCtrl.me);
+app.get('/me', isAuthed, userCtrl.me);
 // app.put('/user/:_id', isAuthed, productsCtrl.update);
+
+//===ORDER ENDPOINTS======================
+app.post('/api/order:userid', orderCtrl.createOrder);
+app.put('/api/order/complete/:orderid/:userid', orderCtrl.completeOrder, orderCtrl.createOrder);
+app.get('/api/order/:userid', orderCtrl.getUserOrder);
+app.get('/api/order/completed/:userid', orderCtrl.getUserHistory);
+
+//===PRODUCTS IN CART ENDPOINT============
+app.get('/api/products', productsCtrl.getProducts);
+app.get('/api/in/cart/:cartid', productsCtrl.getInCart);
+app.post('/api/add/item/cart/:cartid', productsCtrl.addToCart);
+app.put('/api/update/qty/:productid', productsCtrl.updateProductInCart);
+app.delete('/api/delete/item/cart/:productid', productsCtrl.deleteCartItem);
+
 
 
 // ===ENDPOINTS for orig db============================
 // app.get('/api/products', productsCtrl.getProducts);
 // app.get('/api/cart', productsCtrl.getCart);
-
-
 
 
 
