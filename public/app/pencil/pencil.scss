@@ -291,137 +291,9 @@ $b-bottom: #e0e0e0;
     }
   }
 }
-.pencil-rotation-wrap {
-  width: 100%;
-  height: 800px;
-  margin: -26px 0px -25px 0px;
-  position: relative;
-  background: url('http://www.fiftythree.com/assets/images/pencil/turn/frame-bg.jpg') no-repeat 50% 50%;
-  .p-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-1@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: 1;
-  }
-  .p-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-2@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-3 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-3@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-4 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-4@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-5 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-5@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-6 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-6@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-7 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-7@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-8 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-8@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-9 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-9@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-10 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-10@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-  .p-11 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('./../../images/frame-11@1.5x.jpg') no-repeat;
-    background-size: auto 750px;
-    background-position: 50%;
-    z-index: -1;
-  }
-}
 .walnut-aluminum-wrap {
   width: 100%;
-  height: 110vh;
+  height: 665px;
   display: flex;
   .walnut-wrap {
     width: 50%;
@@ -436,15 +308,15 @@ $b-bottom: #e0e0e0;
       position: absolute;
       top: 80px;
       left: 50%;
-      width: 180px;
+      width: 210px;
       .title {
         font-size: 22px;
         font-weight: bold;
       }
       .text {
         margin-top: 10px;
-        font-size: 22px;
-        line-height: 1.1;
+        font-size: 1.125em;
+        line-height: 1.4;
       }
     }
   }
@@ -461,15 +333,331 @@ $b-bottom: #e0e0e0;
       position: absolute;
       top: 80px;
       right: 50%;
-      width: 180px;
+      width: 210px;
       .title {
         font-size: 22px;
         font-weight: bold;
       }
       .text {
         margin-top: 10px;
-        font-size: 22px;
-        line-height: 1.1;
+        font-size: 1.125em;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.pencil-rotation-wrap {
+  width: 100%;
+  height: 800px;
+  margin: -26px 0px -25px 0px;
+  position: relative;
+  background: url('http://www.fiftythree.com/assets/images/pencil/turn/frame-bg.jpg') no-repeat 50% 50%;
+  .p-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-1@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: 1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-2@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-3@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-4@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-5@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-6@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-7 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-7@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-8@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-9@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-10 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-10@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
+      }
+    }
+  }
+  .p-11 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../../images/frame-11@1.5x.jpg') no-repeat;
+    background-size: auto 750px;
+    background-position: 50%;
+    z-index: -1;
+    .inspired-wrapper {
+      width: 250px;
+      font-family: $main-font;
+      color: $nav-color;
+      position: absolute;
+      top: 125px;
+      left: 15%;
+      .title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .text {
+        font-size: 1.125em;
+        line-height: 1.4;;
       }
     }
   }
