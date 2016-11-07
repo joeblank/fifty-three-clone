@@ -136,6 +136,8 @@ $(window).scroll(function () {
   //logging all the time! Uncomment to debug.
   // console.log(winScroll);
 
+  var scrollLocation = 5409;
+  var scrollIncrement = 28;
 
   if (0 < winScroll) {
     $('.p-1').css({
@@ -145,7 +147,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5409 < winScroll) {
+  if (scrollLocation < winScroll) {
     $('.p-2').css({
       "z-index": "2"
     });
@@ -153,7 +155,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5429 < winScroll) {
+  if (scrollLocation + scrollIncrement * 2 < winScroll) {
     $('.p-3').css({
       "z-index": "2"
     });
@@ -161,7 +163,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5449 < winScroll) {
+  if (scrollLocation + scrollIncrement * 3 < winScroll) {
     $('.p-4').css({
       "z-index": "2"
     });
@@ -169,7 +171,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5469 < winScroll) {
+  if (scrollLocation + scrollIncrement * 4 < winScroll) {
     $('.p-5').css({
       "z-index": "2"
     });
@@ -177,7 +179,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5489 < winScroll) {
+  if (scrollLocation + scrollIncrement * 5 < winScroll) {
     $('.p-6').css({
       "z-index": "2"
     });
@@ -185,7 +187,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5509 < winScroll) {
+  if (scrollLocation + scrollIncrement * 6 < winScroll) {
     $('.p-7').css({
       "z-index": "2"
     });
@@ -193,7 +195,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5529 < winScroll) {
+  if (scrollLocation + scrollIncrement * 7 < winScroll) {
     $('.p-8').css({
       "z-index": "2"
     });
@@ -201,7 +203,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5549 < winScroll) {
+  if (scrollLocation + scrollIncrement * 8 < winScroll) {
     $('.p-9').css({
       "z-index": "2"
     });
@@ -209,7 +211,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5569 < winScroll) {
+  if (scrollLocation + scrollIncrement * 9 < winScroll) {
     $('.p-10').css({
       "z-index": "2"
     });
@@ -217,7 +219,7 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
-  if (5589 < winScroll) {
+  if (scrollLocation + scrollIncrement * 10 < winScroll) {
     $('.p-11').css({
       "z-index": "2"
     });
