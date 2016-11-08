@@ -45,60 +45,26 @@ angular.module('fifty-three').service('authService', function ($http) {
       return response;
     });
   };
+
+  this.getCurrentUser = function () {
+    return $http({
+      method: 'GET',
+      url: '/me'
+    });
+  };
 });
 'use strict';
 
 angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService) {
 
-  $scope.fake = [{
-    name: 'Pencil',
-    price: 49.95,
-    desc: 'Gold',
-    quantity: 1,
-    image: './../../images/pencil-gold-graylightest_medium.jpg'
-  }, {
-    name: 'Pencil',
-    price: 59.95,
-    desc: 'Walnut',
-    quantity: 1,
-    image: './../../images/pencil-walnut-graylightest_medium.jpg'
-  }, {
-    name: 'Pencil',
-    price: 59.95,
-    desc: 'Walnut',
-    quantity: 2,
-    image: './../../images/pencil-walnut-graylightest_medium.jpg'
-  }, {
-    name: 'Pencil',
-    price: 59.95,
-    desc: 'Walnut',
-    quantity: 5,
-    image: './../../images/pencil-walnut-graylightest_medium.jpg'
-  }];
-
   //===GET CART====
-  $scope.getCart = function () {
-    cartService.getCart().then(function (response) {
-      console.log('cartCtrl: ');
-      console.log(response);
-      $scope.cart = response;
-    });
-  };
-  $scope.getCart();
+
+
   //===CHANGE QTY OF ITEM========
-  $scope.sub = function (item) {
 
-    cartService.sub(item);
-  };
-  $scope.add = function (item) {
-    cartService.add(item);
-  };
+
   //===SUBTOTAL==============
-  $scope.subtotal = function () {};
 
-  $scope.log = function (item) {
-    console.log(item.qty);
-  };
 
   //===END CTRL=======
 });
@@ -130,6 +96,15 @@ angular.module('fifty-three').service('cartService', function ($http, $q) {
 
   //===END SERVICE=======
 });
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
+'use strict';
+
+angular.module('fifty-three').service('shopService', function ($http, $q) {});
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
@@ -237,43 +212,6 @@ $(window).scroll(function () {
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
-angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {
-
-  var getProducts = function getProducts() {
-    shopService.getProducts().then(function (response) {
-      console.log('response from server: ' + response);
-      $scope.products = response;
-    });
-  };
-  getProducts();
-});
-'use strict';
-
-angular.module('fifty-three').service('shopService', function ($http, $q) {
-
-  this.getProducts = function () {
-    return $http({
-      method: 'GET',
-      url: '/api/products'
-    }).then(function (response) {
-      return response.data;
-    });
-  };
-});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
-});
-'use strict';
-
 angular.module('fifty-three').directive('carouselDir', function () {
 
   return {
@@ -281,36 +219,54 @@ angular.module('fifty-three').directive('carouselDir', function () {
     templateUrl: './app/directives/carouselDir/carouselDir.html',
     controller: function controller($scope, carouselDirService, authService, $state) {
 
-      $scope.hideModal = true;
+      $scope.getProducts = function () {
+        carouselDirService.getProducts().then(function (response) {
+          $scope.products = response;
+          console.log(response);
+          $scope.pencil = $scope.products[0];
+        });
+      };
+      $scope.getProducts();
+
+      $scope.getCurrentUser = function () {
+        authService.getCurrentUser().then(function (response) {
+          console.log('User on session?');
+          console.log(response);
+          $scope.currentUser = response.data;
+        }).catch(function (err) {
+          $scope.currentUser = null;
+        });
+      };
+      $scope.getCurrentUser();
 
       $scope.gold = function () {
-        console.log('gold dir');
-        carouselDirService.gold();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[0];
       };
       $scope.graphite = function () {
-        carouselDirService.graphite();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[1];
       };
       $scope.walnut = function () {
-        carouselDirService.walnut();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[2];
       };
-      $scope.pencil = carouselDirService.pencil;
 
       $scope.addToCart = function (pencil) {
-        console.log('controller to service: ');
+        if (!$scope.currentUser) {
+          return $scope.hideModal = false;
+        }
         console.log(pencil);
-        carouselDirService.addToCart(pencil);
+        //logic here
+        $state.go('cart');
       };
 
       $scope.login = function (user) {
         authService.login(user).then(function (response) {
+          console.log(response.data);
+          $scope.currentUser = response.data;
           if (!response.data) {
             alert('User cannot be found');
             $scope.user.password = '';
           } else {
-            $state.go('cart');
+            $scope.addToCart($scope.pencil);
           }
         }).catch(function (err) {
           alert('Unable to login');
@@ -329,6 +285,8 @@ angular.module('fifty-three').directive('carouselDir', function () {
           alert('unable to create user');
         });
       };
+
+      $scope.hideModal = true;
       //===JQUERY==================================
       $(function () {
         $('.gold').on('click', function () {
@@ -370,47 +328,57 @@ angular.module('fifty-three').directive('carouselDir', function () {
 'use strict';
 
 angular.module('fifty-three').service('carouselDirService', function ($http, $q) {
-  var _this = this;
 
-  var gold = {
-    name: 'Gold',
-    price: 49.95,
-    images: ['./../../images/pencil-gold-1.jpg', './../../images/pencil-gold-2.jpg', './../../images/pencil-gold-3.jpg']
-  };
-  var graphite = {
-    name: 'Graphite',
-    price: 49.95,
-    images: ['./../../images/pencil-graphite-1.jpg', './../../images/pencil-graphite-2.jpg', './../../images/pencil-graphite-3.jpg']
-  };
-  var walnut = {
-    name: 'Walnut + Magnetic Snap',
-    price: 59.95,
-    images: ['./../../images/pencil-walnut-1.jpg', './../../images/pencil-walnut-2.jpg', './../../images/pencil-walnut-3.jpg']
-  };
-  var pencils = [gold, graphite, walnut];
-
-  this.pencil = pencils[0];
-
-  this.gold = function () {
-    console.log('gold service');
-    _this.pencil = pencils[0];
-    console.log(_this.pencil);
-  };
-  this.graphite = function () {
-    _this.pencil = pencils[1];
-    console.log(_this.pencil);
-  };
-  this.walnut = function () {
-    _this.pencil = pencils[2];
-    console.log(_this.pencil);
-  };
-
-  this.addToCart = function (pencil) {
-    console.log('service to cart: ');
-    console.log(pencil);
+  this.getProducts = function () {
+    return $http({
+      method: 'GET',
+      url: '/api/products'
+    }).then(function (response) {
+      var products = response.data;
+      var gold = {
+        name: products[0].prod_desc,
+        price: products[0].price,
+        product_id: 1,
+        images: [],
+        cart_img: products[3].image_path
+      };
+      var graphite = {
+        name: products[4].prod_desc,
+        price: products[4].price,
+        product_id: 2,
+        images: [],
+        cart_img: products[7].image_path
+      };
+      var walnut = {
+        name: products[8].prod_desc,
+        price: products[8].price,
+        product_id: 3,
+        images: [],
+        cart_img: products[12].image_path
+      };
+      for (var i = 0; i < products.length; i++) {
+        if (i < 3) {
+          gold.images.push(products[i].image_path);
+        } else if (i > 3 && i < 7) {
+          graphite.images.push(products[i].image_path);
+        } else if (i > 7 && i < 12) {
+          walnut.images.push(products[i].image_path);
+        }
+      }
+      return [gold, graphite, walnut];
+    });
   };
 
   //==END=====
+});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
 });
 'use strict';
 

@@ -1,6 +1,14 @@
 const app = require('./server');
 const db = app.get('db');
 
+const bcrypt = require('bcryptjs');
+
+const hashPassword = (password) => {
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(password, salt);
+  return hash;
+};
+
 module.exports = {
   register: (req, res) => {
     const user = req.body;
@@ -15,7 +23,7 @@ module.exports = {
           return res.status(500).send(err);
         }
         delete user.password;
-        res.status(200).send(user);  
+        res.status(200).send(user);
       })
 
     });

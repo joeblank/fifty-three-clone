@@ -6,36 +6,54 @@ angular.module('fifty-three')
     templateUrl: './app/directives/carouselDir/carouselDir.html',
     controller: ($scope, carouselDirService, authService, $state) => {
 
-      $scope.hideModal = true;
+      $scope.getProducts = () => {
+        carouselDirService.getProducts().then((response) => {
+          $scope.products = response;
+          console.log(response);
+          $scope.pencil = $scope.products[0];
+        })
+      }
+      $scope.getProducts();
+
+      $scope.getCurrentUser = () => {
+        authService.getCurrentUser().then((response) => {
+          console.log('User on session?');
+          console.log(response);
+          $scope.currentUser = response.data;
+        }).catch((err) => {
+          $scope.currentUser = null;
+        })
+      }
+      $scope.getCurrentUser();
 
       $scope.gold = () => {
-        console.log('gold dir')
-        carouselDirService.gold();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[0];
       } ;
       $scope.graphite = () => {
-        carouselDirService.graphite();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[1];
       };
       $scope.walnut = () => {
-        carouselDirService.walnut();
-        $scope.pencil = carouselDirService.pencil;
+        $scope.pencil = $scope.products[2];
       };
-      $scope.pencil = carouselDirService.pencil;
 
       $scope.addToCart = (pencil) => {
-        console.log('controller to service: ');
+        if (!$scope.currentUser) {
+          return $scope.hideModal = false;
+        }
         console.log(pencil);
-        carouselDirService.addToCart(pencil);
+        //logic here
+        $state.go('cart');
       };
 
       $scope.login = (user) => {
         authService.login(user).then((response) => {
+          console.log(response.data);
+          $scope.currentUser = response.data;
           if (!response.data) {
             alert('User cannot be found');
             $scope.user.password = '';
           } else {
-            $state.go('cart');
+            $scope.addToCart($scope.pencil);
           }
         }).catch((err) => {
           alert('Unable to login');
@@ -54,6 +72,9 @@ angular.module('fifty-three')
           alert('unable to create user');
         });
       };
+
+
+      $scope.hideModal = true;
       //===JQUERY==================================
       $(() =>  {
         $('.gold').on('click', () => {

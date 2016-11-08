@@ -31,8 +31,8 @@
           <div class="globe"></div>
           <div class="drop-down-menu"></div>
         </div>
-        <div class="add-to-cart" ui-sref='cart' ng-click='addToCart(pencil)'>Add to cart</div>
-        <button ng-click='hideModal=false' type="button" name="button">sign-in</button>
+        <div class="add-to-cart" ng-click='addToCart(pencil)'>Add to cart</div>
+        <!-- <button ng-click='hideModal=false' type="button" name="button">sign-in</button> -->
         <div class="works-on">Works on iPad3, 4, Air (all), mini (all),
           iPad Pro, and iPhone 42 and above</div>
       </div>
@@ -71,7 +71,7 @@
           </div>
           <div class="input-wrap">
             <input type="text" ng-model='newUser.name' required>
-            <input type="text" ng-model='newUser.email' required>
+            <input type="email" ng-model='newUser.email' required>
             <input type="password" ng-model='newUser.password' required>
           </div>
         </div>

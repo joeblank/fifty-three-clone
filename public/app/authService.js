@@ -19,6 +19,13 @@ angular.module('fifty-three')
     }).then((response) => {
       return response;
     })
+  };
+
+  this.getCurrentUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/me'
+    })
   }
 
 

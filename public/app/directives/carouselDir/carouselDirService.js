@@ -1,59 +1,45 @@
 angular.module('fifty-three')
 .service('carouselDirService', function($http, $q) {
 
-  const gold = {
-    name: 'Gold',
-    price: 49.95,
-    images: [
-      './../../images/pencil-gold-1.jpg',
-      './../../images/pencil-gold-2.jpg',
-      './../../images/pencil-gold-3.jpg'
-    ]
-  };
-  const graphite =  {
-    name: 'Graphite',
-    price: 49.95,
-    images: [
-      './../../images/pencil-graphite-1.jpg',
-      './../../images/pencil-graphite-2.jpg',
-      './../../images/pencil-graphite-3.jpg'
-    ]
-  };
-  const walnut =  {
-    name: 'Walnut + Magnetic Snap',
-    price: 59.95,
-    images: [
-      './../../images/pencil-walnut-1.jpg',
-      './../../images/pencil-walnut-2.jpg',
-      './../../images/pencil-walnut-3.jpg'
-    ]
-  };
-const pencils = [gold, graphite, walnut];
-
-this.pencil = pencils[0];
-
-this.gold = () => {
-  console.log('gold service');
-  this.pencil = pencils[0];
-  console.log(this.pencil);
-};
-this.graphite = () => {
-  this.pencil = pencils[1];
-  console.log(this.pencil);
-
-};
-this.walnut = () => {
-  this.pencil = pencils[2];
-  console.log(this.pencil);
-};
-
-this.addToCart = (pencil) => {
-console.log('service to cart: ');
-console.log(pencil);
+this.getProducts = () => {
+  return $http({
+    method: 'GET',
+    url: '/api/products'
+  }).then((response) => {
+    const products = response.data;
+    const gold = {
+      name: products[0].prod_desc,
+      price: products[0].price,
+      product_id: 1,
+      images: [],
+      cart_img: products[3].image_path
+    };
+    const graphite = {
+      name: products[4].prod_desc,
+      price: products[4].price,
+      product_id: 2,
+      images: [],
+      cart_img: products[7].image_path
+    };
+    const walnut = {
+      name: products[8].prod_desc,
+      price: products[8].price,
+      product_id: 3,
+      images: [],
+      cart_img: products[12].image_path
+    };
+    for (let i = 0; i < products.length; i++) {
+      if (i < 3) {
+        gold.images.push(products[i].image_path);
+      } else if (i > 3 && i < 7) {
+        graphite.images.push(products[i].image_path);
+      } else if (i > 7 && i < 12) {
+        walnut.images.push(products[i].image_path);
+      }
+    }
+    return [gold, graphite, walnut];
+  })
 }
-
-
-
 
 
 //==END=====
