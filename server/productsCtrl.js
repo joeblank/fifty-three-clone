@@ -32,7 +32,7 @@ module.exports = {
     })
   },
   updateProductInCart: (req, res, next) => {
-    db.product_cart_update([req.body.qty, req.params.productid], (err, productInCart) => {
+    db.product_cart_update([req.params.itemid, req.params.qty], (err, productInCart) => {
       if (err) {
         return res.status(500).send(err);
       };

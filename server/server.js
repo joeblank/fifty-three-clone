@@ -70,7 +70,7 @@ app.get('/api/order/completed/:userid', orderCtrl.getUserHistory);
 app.get('/api/products', productsCtrl.getProducts);
 app.get('/api/in/cart/:cartid', productsCtrl.getInCart);
 app.post('/api/add/item/cart/:cartid', productsCtrl.addToCart);
-app.put('/api/update/qty/:productid', productsCtrl.updateProductInCart);
+app.put('/api/update/qty/:itemid/:qty', productsCtrl.updateProductInCart);
 app.delete('/api/delete/item/cart/:productid', productsCtrl.deleteCartItem);
 
 

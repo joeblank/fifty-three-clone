@@ -69,6 +69,7 @@ $cart-font-color: #A49E93;
             background-position: center;
             border: solid 2px #A59F93;
             border-radius: 7px 0 0 7px;
+            cursor: crosshair;
           }
           .add {
             width: 45px;
@@ -78,6 +79,7 @@ $cart-font-color: #A49E93;
             background-position: center;
             border: solid 2px #A59F93;
             border-radius: 0 7px 7px 0;
+            cursor: pointer;
           }
         }
         .item-total {

@@ -73,19 +73,46 @@ angular.module('fifty-three').service('authService', function ($http) {
 });
 'use strict';
 
-angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService, $stateParams, authService) {
+angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService, $stateParams, authService, $timeout) {
 
   $scope.something = cartService.something;
 
+  var fetchCart = function fetchCart() {
+    authService.getUserOrder($stateParams.userid).then(function (response) {
+      console.log('second get to order: ');
+      console.log(response);
+      $scope.userCart = response.data;
+    });
+  };
+
+  fetchCart();
+
   //===GET CART====
-  authService.getUserOrder($stateParams.userid).then(function (response) {
-    console.log('second get to order: ');
-    console.log(response);
-    $scope.userCart = response.data;
-  });
+  // authService.getUserOrder($stateParams.userid)
+  // .then((response) => {
+  //   console.log('second get to order: ');
+  //   console.log(response);
+  //   $scope.userCart = response.data;
+  // })
+
 
   //===CHANGE QTY OF ITEM========
+  $scope.addQty = function (item_id, item_qty) {
+    var somethingnew = item_qty + 1;
+    console.log('item qty to update: ');
+    console.log(somethingnew);
+    cartService.updateQty(item_id, somethingnew).then(function (response) {
+      fetchCart();
+    });
+  };
 
+  $scope.subtractQty = function (item_id, item_qty) {
+    var somethingelse = item_qty - 1;
+    console.log('item subtract');
+    console.log(somethingelse);
+    cartService.updateQty(item_id, somethingelse);
+    fetchCart();
+  };
 
   //===SUBTOTAL==============
 
@@ -96,44 +123,15 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
 
 angular.module('fifty-three').service('cartService', function ($http, $q, $state) {
 
-  // this.getUserOrder = function (userid) {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/api/order/' + userid
-  //   }).then(function (user_basket) {
-  //     console.log('user order: ')
-  //     console.log(user_basket);
-  //     const orderid = user_basket.data.order.id;
-  //     cartService.addToCart(orderid, pencil.product_id, 1)
-  //     .then(function (response) {
-  //       console.log(response)
-  //         $state.go('cart');
-  //     })
-  //   })
-  // };
-
-
-  // this.addToCart = (orderid, productid, qty) => {
-  //   return $http({
-  //     method: "POST",
-  //     url: '/api/add/item/cart/' + orderid,
-  //     data: {
-  //       id: productid,
-  //       qty: qty
-  //     }
-  //   }).then((response) => {
-  //     console.log(response)
-  //     this.something = response.data.products;
-  //       $state.go('cart');
-  //   })
-  // };
-
+  this.updateQty = function (item_id, item_qty) {
+    return $http({
+      method: "PUT",
+      url: '/api/update/qty/' + item_id + '/' + item_qty
+    });
+  };
 
   //===END SERVICE=======
 });
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
@@ -241,19 +239,13 @@ $(window).scroll(function () {
 });
 'use strict';
 
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
 'use strict';
 
 angular.module('fifty-three').service('shopService', function ($http, $q) {});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
-});
 'use strict';
 
 angular.module('fifty-three').directive('carouselDir', function () {
@@ -428,6 +420,15 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
+});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
 });
 'use strict';
 

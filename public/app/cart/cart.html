@@ -1,6 +1,6 @@
 <nav-dir></nav-dir>
 <main class="cart-outer-wrapper" ng-controller='cartCtrl'>
-  {{userCart}}
+  {{userCart.order.id}}
   <section class="cart-wrapper">
     <div class="your-cart">Your cart</div>
     <div class="pqt-wrapper">
@@ -10,10 +10,11 @@
     </div>
     <hr>
     <!-- ▼ NG_REPEAT OVER THIS DIV ▼ -->
-    <div class="cart-item-wrapper" ng-repeat='item in cart'>
+    <div class="cart-item-wrapper" ng-repeat='item in userCart.products track by $index'>
+      {{item}}
       <div class="item-inner-wrapper">
         <div class="thumbnail-wrap">
-          <img class='thumbnail' ng-src="{{item.thumbnail}}" style='height: 100px; width: 100px' alt="{{item.name}}" />
+          <img class='thumbnail' ng-src="./../..{{item.image_path}}" style='height: 100px; width: 100px' alt="{{item.name}}" />
         </div>
         <div class="name-wrapper">
           <div class="item-name">{{item.name}}</div>
@@ -22,8 +23,8 @@
         <div class="price">{{item.price | currency}}</div>
         <div class="qty">{{item.qty}}</div>
         <div class="add-sub-wrap">
-          <div class="sub" ng-click='item.qty - 1; log(item)'></div>
-          <div class="add" ng-click='item.qty + 1'></div>
+          <div class="sub" ng-click='subtractQty(item.id, item.qty)'></div>
+          <div class="add" ng-click='addQty(item.id, item.qty)'></div>
         </div>
         <div class="item-total">{{item.price * item.qty | currency}}</div>
       </div>
