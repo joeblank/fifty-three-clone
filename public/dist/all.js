@@ -73,12 +73,16 @@ angular.module('fifty-three').service('authService', function ($http) {
 });
 'use strict';
 
-angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService) {
+angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService, $stateParams, authService) {
 
   $scope.something = cartService.something;
 
   //===GET CART====
-
+  authService.getUserOrder($stateParams.userid).then(function (response) {
+    console.log('second get to order: ');
+    console.log(response);
+    $scope.userCart = response.data;
+  });
 
   //===CHANGE QTY OF ITEM========
 
@@ -302,11 +306,12 @@ angular.module('fifty-three').directive('carouselDir', function () {
           var orderid = user_basket.data.order.id;
           authService.addToCart(orderid, pencil.product_id, 1).then(function (response) {
             console.log(response);
-            authService.getUserOrder($scope.currentUser.id).then(function (response) {
-              console.log('second get to order: ');
-              console.log(response);
-              $state.go('cart');
-            });
+            // authService.getUserOrder($scope.currentUser.id)
+            // .then((response) => {
+            //   console.log('second get to order: ');
+            //   console.log(response);
+            $state.go('cart', { userid: $scope.currentUser.id });
+            // })
           });
         });
       };

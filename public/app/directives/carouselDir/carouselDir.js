@@ -51,12 +51,12 @@ angular.module('fifty-three')
           authService.addToCart(orderid, pencil.product_id, 1)
           .then((response) => {
             console.log(response)
-            authService.getUserOrder($scope.currentUser.id)
-            .then((response) => {
-              console.log('second get to order: ');
-              console.log(response);
-              $state.go('cart');
-            })
+            // authService.getUserOrder($scope.currentUser.id)
+            // .then((response) => {
+            //   console.log('second get to order: ');
+            //   console.log(response);
+              $state.go('cart', {userid: $scope.currentUser.id});
+            // })
           })
         })
       };
