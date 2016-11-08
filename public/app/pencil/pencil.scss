@@ -662,3 +662,57 @@ $b-bottom: #e0e0e0;
     }
   }
 }
+.simply-works-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $main-font;
+  background: $nav-color;
+  width: 100%;
+  padding: 150px 0 100px 0;
+  .simply-works {
+    color: $paper-text-color;
+    font-size: 4.5em;
+  }
+  .best-tools {
+    width: 700px;
+    text-align: center;
+    font-size: 1.625em;
+    margin-top: 18px;
+    line-height: 1.2;
+  }
+  .power-it-up-container {
+    display: flex;
+    justify-content: space-around;
+    .power-it-up {
+      display: flex;
+      flex-direction: column;
+      width: 264.2px;
+      .icon {}
+      .title {
+        text-align: center;
+      }
+      .text {}
+    }
+    .kiss-to-pair {
+      display: flex;
+      flex-direction: column;
+      width: 264.2px;
+      .icon {}
+      .title {
+        text-align: center;
+      }
+      .text {}
+    }
+    .plays-nicely {
+      display: flex;
+      flex-direction: column;
+      width: 264.2px;
+      .icon {}
+      .title {
+        text-align: center;
+      }
+      .text {}
+    }
+  }
+}

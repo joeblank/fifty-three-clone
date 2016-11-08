@@ -200,6 +200,55 @@
           opacity: .7; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
+.shop-nav-wrapper {
+  font-family: "Roboto", sans-serif; }
+  .shop-nav-wrapper .nav-container {
+    width: 100%;
+    height: 100px;
+    background: #FFFCF5;
+    display: flex; }
+    .shop-nav-wrapper .nav-container .logo-container .logo {
+      width: 55px;
+      height: 55px;
+      margin-left: 20.5vw;
+      margin-top: 22px; }
+    .shop-nav-wrapper .nav-container .links-container {
+      color: #66625B;
+      position: absolute;
+      top: 37px;
+      right: 75px;
+      display: flex;
+      align-items: center; }
+      .shop-nav-wrapper .nav-container .links-container .paper {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .pencil {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .shop {
+        margin: 0 25px 0 0;
+        cursor: pointer; }
+      .shop-nav-wrapper .nav-container .links-container .download {
+        margin: 0 30px 0 0;
+        border: solid 2px #66625B;
+        border-radius: 100px;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #66625B; }
+      .shop-nav-wrapper .nav-container .links-container .download:hover {
+        background: #66625B;
+        color: white; }
+      .shop-nav-wrapper .nav-container .links-container .facebook {
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 5px 0 0; }
+      .shop-nav-wrapper .nav-container .links-container .twitter {
+        width: 30px;
+        height: 30px;
+        opacity: .27; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .main-container {
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -765,54 +814,142 @@
         font-size: 1.125em;
         line-height: 1.4; }
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
-.shop-nav-wrapper {
-  font-family: "Roboto", sans-serif; }
-  .shop-nav-wrapper .nav-container {
-    width: 100%;
-    height: 100px;
-    background: #FFFCF5;
-    display: flex; }
-    .shop-nav-wrapper .nav-container .logo-container .logo {
-      width: 55px;
-      height: 55px;
-      margin-left: 20.5vw;
-      margin-top: 22px; }
-    .shop-nav-wrapper .nav-container .links-container {
-      color: #66625B;
-      position: absolute;
-      top: 37px;
-      right: 75px;
+.simply-works-outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background: #FFFCF5;
+  width: 100%;
+  padding: 150px 0 100px 0; }
+  .simply-works-outer-container .simply-works {
+    color: #66625B;
+    font-size: 4.5em; }
+  .simply-works-outer-container .best-tools {
+    width: 700px;
+    text-align: center;
+    font-size: 1.625em;
+    margin-top: 18px;
+    line-height: 1.2; }
+  .simply-works-outer-container .power-it-up-container {
+    display: flex;
+    justify-content: space-around; }
+    .simply-works-outer-container .power-it-up-container .power-it-up {
       display: flex;
-      align-items: center; }
-      .shop-nav-wrapper .nav-container .links-container .paper {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .pencil {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .shop {
-        margin: 0 25px 0 0;
-        cursor: pointer; }
-      .shop-nav-wrapper .nav-container .links-container .download {
-        margin: 0 30px 0 0;
-        border: solid 2px #66625B;
-        border-radius: 100px;
-        padding: 8px 15px;
-        text-decoration: none;
-        color: #66625B; }
-      .shop-nav-wrapper .nav-container .links-container .download:hover {
-        background: #66625B;
-        color: white; }
-      .shop-nav-wrapper .nav-container .links-container .facebook {
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 5px 0 0; }
-      .shop-nav-wrapper .nav-container .links-container .twitter {
+      flex-direction: column;
+      width: 264.2px; }
+      .simply-works-outer-container .power-it-up-container .power-it-up .title {
+        text-align: center; }
+    .simply-works-outer-container .power-it-up-container .kiss-to-pair {
+      display: flex;
+      flex-direction: column;
+      width: 264.2px; }
+      .simply-works-outer-container .power-it-up-container .kiss-to-pair .title {
+        text-align: center; }
+    .simply-works-outer-container .power-it-up-container .plays-nicely {
+      display: flex;
+      flex-direction: column;
+      width: 264.2px; }
+      .simply-works-outer-container .power-it-up-container .plays-nicely .title {
+        text-align: center; }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px 0px; }
+  .outer-wrapper .upper-wrapper {
+    display: flex;
+    align-items: center; }
+    .outer-wrapper .upper-wrapper .links-wrapper {
+      display: flex;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      font-size: 15px; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
+          cursor: pointer; }
+      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
+        display: flex;
+        flex-direction: column; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
+          margin-bottom: 5px;
+          cursor: pointer; }
+        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
+          cursor: pointer; }
+    .outer-wrapper .upper-wrapper .social-wrapper {
+      margin: 0px 90px; }
+      .outer-wrapper .upper-wrapper .social-wrapper a {
+        text-decoration: none; }
+      .outer-wrapper .upper-wrapper .social-wrapper .fb {
+        background-size: contain;
         width: 30px;
         height: 30px;
         opacity: .27; }
+      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
+        background-size: 30px;
+        width: 30px;
+        height: 30px;
+        opacity: .27;
+        margin: 0 0 0 5px; }
+    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
+      color: #66625B;
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      font-size: 18px;
+      display: flex;
+      align-items: center; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
+        cursor: pointer; }
+      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
+        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
+        background-size: contain;
+        width: 36px;
+        height: 36px;
+        margin: 0 0 0 10px;
+        cursor: pointer; }
+  .outer-wrapper .lower-wrapper {
+    font-size: 14px;
+    display: flex;
+    margin: 40px 0 0 0; }
+    .outer-wrapper .lower-wrapper .copy-right {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      color: #66625B;
+      margin: 0 10px 0 0; }
+    .outer-wrapper .lower-wrapper .links a {
+      font-family: "Roboto", sans-serif;
+      font-weight: lighter;
+      text-decoration: none;
+      color: #66625B;
+      margin: 0 0 0 10px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .carousel-wrapper {
@@ -982,104 +1119,6 @@
           .modal-outer-wrapper .modal-container .lower-wrapper .form-wrapper .outer-container .input-wrap {
             display: flex;
             flex-direction: column; }
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:300");
-.outer-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 100px 0px; }
-  .outer-wrapper .upper-wrapper {
-    display: flex;
-    align-items: center; }
-    .outer-wrapper .upper-wrapper .links-wrapper {
-      display: flex;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      font-size: 15px; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .paper {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-wrap .pencil {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .shop {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .left-mid-wrap .support {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap {
-        display: flex;
-        flex-direction: column;
-        margin-right: 50px; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .blog {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-mid-wrap .press {
-          cursor: pointer; }
-      .outer-wrapper .upper-wrapper .links-wrapper .right-wrap {
-        display: flex;
-        flex-direction: column; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .about {
-          margin-bottom: 5px;
-          cursor: pointer; }
-        .outer-wrapper .upper-wrapper .links-wrapper .right-wrap .jobs {
-          cursor: pointer; }
-    .outer-wrapper .upper-wrapper .social-wrapper {
-      margin: 0px 90px; }
-      .outer-wrapper .upper-wrapper .social-wrapper a {
-        text-decoration: none; }
-      .outer-wrapper .upper-wrapper .social-wrapper .fb {
-        background-size: contain;
-        width: 30px;
-        height: 30px;
-        opacity: .27; }
-      .outer-wrapper .upper-wrapper .social-wrapper .twitter {
-        background-size: 30px;
-        width: 30px;
-        height: 30px;
-        opacity: .27;
-        margin: 0 0 0 5px; }
-    .outer-wrapper .upper-wrapper .fifty-three-wrapper {
-      color: #66625B;
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      font-size: 18px;
-      display: flex;
-      align-items: center; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .fifty-three {
-        cursor: pointer; }
-      .outer-wrapper .upper-wrapper .fifty-three-wrapper .logo {
-        background: url("http://fiftythree.com/assets/images/logos/53-dark.svg") center no-repeat;
-        background-size: contain;
-        width: 36px;
-        height: 36px;
-        margin: 0 0 0 10px;
-        cursor: pointer; }
-  .outer-wrapper .lower-wrapper {
-    font-size: 14px;
-    display: flex;
-    margin: 40px 0 0 0; }
-    .outer-wrapper .lower-wrapper .copy-right {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      color: #66625B;
-      margin: 0 10px 0 0; }
-    .outer-wrapper .lower-wrapper .links a {
-      font-family: "Roboto", sans-serif;
-      font-weight: lighter;
-      text-decoration: none;
-      color: #66625B;
-      margin: 0 0 0 10px; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .nav-dir-wrapper {

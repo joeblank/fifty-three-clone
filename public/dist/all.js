@@ -98,15 +98,6 @@ angular.module('fifty-three').service('cartService', function ($http, $q) {
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
-angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
-'use strict';
-
-angular.module('fifty-three').service('shopService', function ($http, $q) {});
-'use strict';
-
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
 "use strict";
 
@@ -208,6 +199,24 @@ $(window).scroll(function () {
     $('.p-1, .p-2, .p-3, .p-4, .p-5, .p-6, .p-7, .p-8, .p-9, .p-10').css({
       "z-index": "-1"
     });
+  };
+});
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
+'use strict';
+
+angular.module('fifty-three').service('shopService', function ($http, $q) {});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
   };
 });
 'use strict';
@@ -370,15 +379,6 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
-});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
 });
 'use strict';
 
