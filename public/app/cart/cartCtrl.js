@@ -1,6 +1,7 @@
 angular.module('fifty-three')
 .controller('cartCtrl', ($scope, cartService) => {
 
+$scope.something = cartService.something;
 
 
 //===GET CART====

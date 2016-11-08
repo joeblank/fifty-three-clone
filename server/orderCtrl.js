@@ -20,12 +20,14 @@ module.exports = {
   },
   getUserOrder: (req, res, next) => {
     const completeOrder = {};
-    db.order_by_user([req.params.userid], (err, order) => {
+    db.get_user_order([req.params.userid], (err, order) => {
       if (err) {
         return res.status(500).send(err);
       };
 
       completeOrder.order = order[0];
+      console.log(order);
+      // res.status(200).send(completeOrder);
       db.product_cart_find([completeOrder.order.id], (err, products) => {
         if (err) {
           return res.status(500).send(err);

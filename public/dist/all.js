@@ -17,7 +17,7 @@ angular.module('fifty-three', ['ui.router']).config(function ($stateProvider, $u
     templateUrl: './app/shop/shop.html',
     controller: 'shopCtrl'
   }).state('cart', {
-    url: '/cart',
+    url: '/cart/:userid',
     templateUrl: './app/cart/cart.html',
     controller: 'shopCtrl'
   });
@@ -52,10 +52,30 @@ angular.module('fifty-three').service('authService', function ($http) {
       url: '/me'
     });
   };
+
+  this.getUserOrder = function (userid) {
+    return $http({
+      method: 'GET',
+      url: '/api/order/' + userid
+    });
+  };
+
+  this.addToCart = function (orderid, productid, qty) {
+    return $http({
+      method: "POST",
+      url: '/api/add/item/cart/' + orderid,
+      data: {
+        id: productid,
+        qty: qty
+      }
+    });
+  };
 });
 'use strict';
 
 angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService) {
+
+  $scope.something = cartService.something;
 
   //===GET CART====
 
@@ -70,32 +90,46 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
 });
 'use strict';
 
-angular.module('fifty-three').service('cartService', function ($http, $q) {
+angular.module('fifty-three').service('cartService', function ($http, $q, $state) {
 
-  this.getCart = function () {
-    return $http({
-      method: 'GET',
-      url: '/api/cart'
-    }).then(function (response) {
-      console.log('cart service: ');
-      console.log(response);
-      return response.data;
-    });
-  };
+  // this.getUserOrder = function (userid) {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/order/' + userid
+  //   }).then(function (user_basket) {
+  //     console.log('user order: ')
+  //     console.log(user_basket);
+  //     const orderid = user_basket.data.order.id;
+  //     cartService.addToCart(orderid, pencil.product_id, 1)
+  //     .then(function (response) {
+  //       console.log(response)
+  //         $state.go('cart');
+  //     })
+  //   })
+  // };
 
-  this.sub = function (item) {
-    return $http({
-      method: 'PUT',
-      url: '/api/update-cart',
-      data: {
-        id: item.id,
-        qty: item.qty
-      }
-    });
-  };
+
+  // this.addToCart = (orderid, productid, qty) => {
+  //   return $http({
+  //     method: "POST",
+  //     url: '/api/add/item/cart/' + orderid,
+  //     data: {
+  //       id: productid,
+  //       qty: qty
+  //     }
+  //   }).then((response) => {
+  //     console.log(response)
+  //     this.something = response.data.products;
+  //       $state.go('cart');
+  //   })
+  // };
+
 
   //===END SERVICE=======
 });
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
@@ -203,9 +237,6 @@ $(window).scroll(function () {
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
 'use strict';
 
@@ -226,7 +257,9 @@ angular.module('fifty-three').directive('carouselDir', function () {
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: function controller($scope, carouselDirService, authService, $state) {
+    controller: function controller($scope, carouselDirService, authService, $state, cartService) {
+
+      $scope.crazy = 'crazy';
 
       $scope.getProducts = function () {
         carouselDirService.getProducts().then(function (response) {
@@ -263,8 +296,19 @@ angular.module('fifty-three').directive('carouselDir', function () {
           return $scope.hideModal = false;
         }
         console.log(pencil);
-        //logic here
-        $state.go('cart');
+        authService.getUserOrder($scope.currentUser.id).then(function (user_basket) {
+          console.log('user order: ');
+          console.log(user_basket);
+          var orderid = user_basket.data.order.id;
+          authService.addToCart(orderid, pencil.product_id, 1).then(function (response) {
+            console.log(response);
+            authService.getUserOrder($scope.currentUser.id).then(function (response) {
+              console.log('second get to order: ');
+              console.log(response);
+              $state.go('cart');
+            });
+          });
+        });
       };
 
       $scope.login = function (user) {

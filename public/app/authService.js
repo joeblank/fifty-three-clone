@@ -26,7 +26,26 @@ angular.module('fifty-three')
       method: 'GET',
       url: '/me'
     })
-  }
+  };
+
+  this.getUserOrder = (userid) => {
+    return $http({
+      method: 'GET',
+      url: '/api/order/' + userid
+    })
+  };
+
+  this.addToCart = (orderid, productid, qty) => {
+    return $http({
+      method: "POST",
+      url: '/api/add/item/cart/' + orderid,
+      data: {
+        id: productid,
+        qty: qty
+      }
+    })
+  };
+
 
 
 })

@@ -20,7 +20,7 @@ angular.module('fifty-three', ['ui.router'])
     controller: 'shopCtrl'
   })
   .state('cart', {
-    url: '/cart',
+    url: '/cart/:userid',
     templateUrl: './app/cart/cart.html',
     controller: 'shopCtrl'
   })

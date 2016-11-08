@@ -1,5 +1,6 @@
 $(window).scroll(function() {
 
+
 let winScroll = $(this).scrollTop();
 
 //commented out console.log so it's not

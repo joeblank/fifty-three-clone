@@ -4,7 +4,9 @@ angular.module('fifty-three')
   return {
     restrict: 'E',
     templateUrl: './app/directives/carouselDir/carouselDir.html',
-    controller: ($scope, carouselDirService, authService, $state) => {
+    controller: ($scope, carouselDirService, authService, $state, cartService) => {
+
+      $scope.crazy = 'crazy';
 
       $scope.getProducts = () => {
         carouselDirService.getProducts().then((response) => {
@@ -41,8 +43,22 @@ angular.module('fifty-three')
           return $scope.hideModal = false;
         }
         console.log(pencil);
-        //logic here
-        $state.go('cart');
+        authService.getUserOrder($scope.currentUser.id)
+        .then((user_basket) => {
+          console.log('user order: ')
+          console.log(user_basket);
+          const orderid = user_basket.data.order.id;
+          authService.addToCart(orderid, pencil.product_id, 1)
+          .then((response) => {
+            console.log(response)
+            authService.getUserOrder($scope.currentUser.id)
+            .then((response) => {
+              console.log('second get to order: ');
+              console.log(response);
+              $state.go('cart');
+            })
+          })
+        })
       };
 
       $scope.login = (user) => {
