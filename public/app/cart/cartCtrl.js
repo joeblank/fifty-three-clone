@@ -9,6 +9,12 @@ const fetchCart = () => {
     // console.log('second get to order: ');
     // console.log(response);
     $scope.userCart = response.data;
+    const allProducts = $scope.userCart.products;
+    var subtotal = 0;
+    for (var i = 0; i < allProducts.length; i++) {
+      subtotal += (allProducts[i].qty * allProducts[i].price);
+      $scope.schmotal = subtotal;
+    }
   })
 };
 
@@ -59,6 +65,7 @@ $scope.subtractQty = (item_id, item_qty) => {
 
 
 //===SUBTOTAL==============
+
 
 
 
