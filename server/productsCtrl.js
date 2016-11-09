@@ -40,7 +40,7 @@ module.exports = {
     });
   },
   deleteCartItem: (req,res, next) => {
-    db.product_cart_remove([req.params.productid], (err, product) => {
+    db.product_cart_remove([req.params.itemid], (err, product) => {
       if (err) {
         return res.status(500).send(err);
       };

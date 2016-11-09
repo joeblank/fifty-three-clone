@@ -71,7 +71,7 @@ app.get('/api/products', productsCtrl.getProducts);
 app.get('/api/in/cart/:cartid', productsCtrl.getInCart);
 app.post('/api/add/item/cart/:cartid', productsCtrl.addToCart);
 app.put('/api/update/qty/:itemid/:qty', productsCtrl.updateProductInCart);
-app.delete('/api/delete/item/cart/:productid', productsCtrl.deleteCartItem);
+app.delete('/api/delete/item/cart/:itemid', productsCtrl.deleteCartItem);
 
 
 

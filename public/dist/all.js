@@ -79,8 +79,8 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
 
   var fetchCart = function fetchCart() {
     authService.getUserOrder($stateParams.userid).then(function (response) {
-      console.log('second get to order: ');
-      console.log(response);
+      // console.log('second get to order: ');
+      // console.log(response);
       $scope.userCart = response.data;
     });
   };
@@ -98,20 +98,33 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
 
   //===CHANGE QTY OF ITEM========
   $scope.addQty = function (item_id, item_qty) {
-    var somethingnew = item_qty + 1;
-    console.log('item qty to update: ');
-    console.log(somethingnew);
-    cartService.updateQty(item_id, somethingnew).then(function (response) {
+    var adding = item_qty + 1;
+    // console.log('item qty to update: ')
+    // console.log(adding);
+    cartService.updateQty(item_id, adding).then(function (response) {
       fetchCart();
     });
   };
 
   $scope.subtractQty = function (item_id, item_qty) {
-    var somethingelse = item_qty - 1;
-    console.log('item subtract');
-    console.log(somethingelse);
-    cartService.updateQty(item_id, somethingelse);
-    fetchCart();
+    var subtracting = item_qty - 1;
+    if (subtracting <= 0) {
+      swal({
+        title: "Remove item?",
+        type: "warning",
+        showCancelButton: true,
+        animation: "slide-from-top"
+      }, function () {
+        cartService.removeItem(item_id).then(function (response) {
+          fetchCart();
+        });
+      });
+    } else {
+      // console.log('item subtract');
+      // console.log(subtracting);
+      cartService.updateQty(item_id, subtracting);
+      fetchCart();
+    }
   };
 
   //===SUBTOTAL==============
@@ -130,11 +143,52 @@ angular.module('fifty-three').service('cartService', function ($http, $q, $state
     });
   };
 
+  this.removeItem = function (item_id) {
+    return $http({
+      method: "DELETE",
+      url: "/api/delete/item/cart/" + item_id
+    });
+  };
+
   //===END SERVICE=======
 });
 'use strict';
 
-angular.module('fifty-three').controller('pencilCtrl', function ($scope) {});
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
+angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
+'use strict';
+
+angular.module('fifty-three').service('shopService', function ($http, $q) {});
+'use strict';
+
+angular.module('fifty-three').controller('pencilCtrl', function ($scope) {
+
+  $scope.button = function () {
+    swal({
+      title: "Remove item from cart?",
+      showCancelButton: true,
+      confirmButtonText: "Yes, remove item.",
+      imageUrl: 'https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/53-dark.svg?1246397996584665470',
+      text: "Write something interesting:",
+      type: "input",
+      inputType: 'email',
+      closeOnConfirm: false
+    }, function (inputValue) {
+      $scope.valueSup = inputValue;
+      alert($scope.valueSup);
+      swal({
+        title: "Remove item from cart?",
+        showCancelButton: true,
+        confirmButtonText: "Yes, remove item.",
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0245/8513/t/7/assets/53-dark.svg?1246397996584665470',
+        text: "Write something interesting:",
+        type: "input"
+      });
+    });
+  };
+});
 "use strict";
 
 $(window).scroll(function () {
@@ -239,13 +293,13 @@ $(window).scroll(function () {
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
-angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
-'use strict';
-
-angular.module('fifty-three').service('shopService', function ($http, $q) {});
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
+});
 'use strict';
 
 angular.module('fifty-three').directive('carouselDir', function () {
@@ -369,6 +423,13 @@ angular.module('fifty-three').directive('carouselDir', function () {
         });
       });
 
+      $(function () {
+        $("input").change(function () {
+          var inputs = $(this).closest('form').find(':input');
+          inputs.eq(inputs.index(this) + 1).focus();
+        });
+      });
+
       //===END CONTROLLER==
     }
     //===END RETURN========
@@ -420,15 +481,6 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
-});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
 });
 'use strict';
 
