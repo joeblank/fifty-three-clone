@@ -5,9 +5,9 @@ let winScroll = $(this).scrollTop();
 
 //commented out console.log so it's not
 //logging all the time! Uncomment to debug.
-// console.log(winScroll);
+console.log(winScroll);
 
-const scrollLocation = 5409;
+const scrollLocation = 7862;
 const scrollIncrement = 28;
 
 if (0 < winScroll) {
@@ -98,6 +98,69 @@ if ((scrollLocation + (scrollIncrement * 10)) < winScroll) {
     "z-index": "-1"
   })
 };
+
+
+// PARALLAX
+
+//BLUETOOTH
+if(winScroll > 4899) {
+  $('.bluetooth').css({
+    'position': 'fixed',
+    'top': '512px'
+  })
+} else {
+  $('.bluetooth').css({
+    'position': 'static'
+  })
+};
+if (winScroll > 5049) {
+  $('.bluetooth').css({
+    'position': 'absolute',
+    'top': '263px'
+  })
+};
+// BODY
+if (winScroll > 4889) {
+  $('.body').css({
+    'position': 'fixed',
+    'top': '522px'
+  })
+} else {
+  $('.body').css({
+    'position': 'static'
+  })
+};
+if (winScroll > 5400) {
+  $('.body').css({
+    'position': 'absolute',
+    'top': '628px'
+  })
+};
+// BATTERY
+if(winScroll > 4899) {
+  $('.battery').css({
+    'position': 'fixed',
+    'top': '512px'
+  })
+};
+// TIP
+if(winScroll > 4899) {
+  $('.tip').css({
+    'position': 'fixed',
+    'top': '512px'
+  })
+} else {
+  $('.battery').css({
+    'position': 'static'
+  })
+};
+if (winScroll > 5880) {
+  $('.tip').css({
+    'position': 'absolute',
+    'top': '628px'
+  })
+}
+
 
 
 

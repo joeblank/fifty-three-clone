@@ -45,6 +45,14 @@ module.exports = {
       };
       res.status(200).send(orders);
     })
+  },
+  completeOrder: (req,res,next) => {
+    db.order_complete([req.params.orderid], (err, order) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      next();
+    });
   }
 
 

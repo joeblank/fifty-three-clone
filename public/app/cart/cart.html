@@ -1,5 +1,8 @@
 <nav-dir></nav-dir>
 <main class="cart-outer-wrapper" ng-controller='cartCtrl'>
+  <p style="width: 100px; z-index: 2">
+    {{userCart}}
+  </p>
   <section class="cart-wrapper">
     <div class="your-cart">Your cart</div>
     <div class="pqt-wrapper">
@@ -44,4 +47,18 @@
       </div>
     </div>
   </section>
+  <button ng-click='placeOrder(userCart.order.user_id, userCart.order.id)' type="button" style="position: fixed; bottom: 20px; right: 100px">Place Order</button>
 </main>
+
+<section class="add-extras-wrapper">
+  <div class="add-extras">Add Extras</div>
+  <div class="replacement-wrapper">
+    <div class="replacement">Replacements Tips and Eraser</div>
+    <div class="includes">Includes two tips and one eraser for Pencil</div>
+    <div class="price">$7.95 USD</div>
+    <div class="added">Add</div>
+  </div>
+  <div class=""></div>
+</section>
+
+<footer-dir></footer-dir>

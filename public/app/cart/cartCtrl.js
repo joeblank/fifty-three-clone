@@ -1,5 +1,5 @@
 angular.module('fifty-three')
-.controller('cartCtrl', ($scope, cartService, $stateParams, authService, $timeout) => {
+.controller('cartCtrl', ($scope, cartService, $stateParams, authService, $timeout, $state) => {
 
 $scope.something = cartService.something;
 
@@ -46,6 +46,8 @@ $scope.subtractQty = (item_id, item_qty) => {
         title: "Remove item?",
         type: "warning",
         showCancelButton: true,
+        confirmButtonText: "Remove",
+        cancelButtonText: "Keep",
         animation: "slide-from-top"
       },
       () => {
@@ -61,6 +63,12 @@ $scope.subtractQty = (item_id, item_qty) => {
     cartService.updateQty(item_id, subtracting);
     fetchCart();
   }
+};
+
+$scope.placeOrder = (user_id, order_id) => {
+  cartService.placeOrder(user_id, order_id).then((response) => {
+    $state.go('shop');
+  })
 }
 
 

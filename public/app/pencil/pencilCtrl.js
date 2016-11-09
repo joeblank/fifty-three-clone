@@ -1,5 +1,11 @@
 angular.module('fifty-three')
-.controller('pencilCtrl', ($scope) => {
+.controller('pencilCtrl', ($scope, $anchorScroll, $location) => {
+  $scope.scrollTo = (id) => {
+    $location.hash(id);
+    $anchorScroll();
+  }
+
+
 
 $scope.button = () => {
   swal({

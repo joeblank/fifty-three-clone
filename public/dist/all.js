@@ -73,7 +73,7 @@ angular.module('fifty-three').service('authService', function ($http) {
 });
 'use strict';
 
-angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService, $stateParams, authService, $timeout) {
+angular.module('fifty-three').controller('cartCtrl', function ($scope, cartService, $stateParams, authService, $timeout, $state) {
 
   $scope.something = cartService.something;
 
@@ -119,6 +119,8 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
         title: "Remove item?",
         type: "warning",
         showCancelButton: true,
+        confirmButtonText: "Remove",
+        cancelButtonText: "Keep",
         animation: "slide-from-top"
       }, function () {
         cartService.removeItem(item_id).then(function (response) {
@@ -131,6 +133,12 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
       cartService.updateQty(item_id, subtracting);
       fetchCart();
     }
+  };
+
+  $scope.placeOrder = function (user_id, order_id) {
+    cartService.placeOrder(user_id, order_id).then(function (response) {
+      $state.go('shop');
+    });
   };
 
   //===SUBTOTAL==============
@@ -156,14 +164,22 @@ angular.module('fifty-three').service('cartService', function ($http, $q, $state
     });
   };
 
+  this.placeOrder = function (user_id, order_id) {
+    return $http({
+      method: 'PUT',
+      url: '/api/order/complete/' + order_id + '/' + user_id
+    });
+  };
+
   //===END SERVICE=======
 });
 'use strict';
 
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
-'use strict';
-
-angular.module('fifty-three').controller('pencilCtrl', function ($scope) {
+angular.module('fifty-three').controller('pencilCtrl', function ($scope, $anchorScroll, $location) {
+  $scope.scrollTo = function (id) {
+    $location.hash(id);
+    $anchorScroll();
+  };
 
   $scope.button = function () {
     swal({
@@ -197,9 +213,9 @@ $(window).scroll(function () {
 
   //commented out console.log so it's not
   //logging all the time! Uncomment to debug.
-  // console.log(winScroll);
+  console.log(winScroll);
 
-  var scrollLocation = 5409;
+  var scrollLocation = 7862;
   var scrollIncrement = 28;
 
   if (0 < winScroll) {
@@ -290,7 +306,71 @@ $(window).scroll(function () {
       "z-index": "-1"
     });
   };
+
+  // PARALLAX
+
+  //BLUETOOTH
+  if (winScroll > 4899) {
+    $('.bluetooth').css({
+      'position': 'fixed',
+      'top': '512px'
+    });
+  } else {
+    $('.bluetooth').css({
+      'position': 'static'
+    });
+  };
+  if (winScroll > 5049) {
+    $('.bluetooth').css({
+      'position': 'absolute',
+      'top': '263px'
+    });
+  };
+  // BODY
+  if (winScroll > 4889) {
+    $('.body').css({
+      'position': 'fixed',
+      'top': '522px'
+    });
+  } else {
+    $('.body').css({
+      'position': 'static'
+    });
+  };
+  if (winScroll > 5400) {
+    $('.body').css({
+      'position': 'absolute',
+      'top': '628px'
+    });
+  };
+  // BATTERY
+  if (winScroll > 4899) {
+    $('.battery').css({
+      'position': 'fixed',
+      'top': '512px'
+    });
+  };
+  // TIP
+  if (winScroll > 4899) {
+    $('.tip').css({
+      'position': 'fixed',
+      'top': '512px'
+    });
+  } else {
+    $('.battery').css({
+      'position': 'static'
+    });
+  };
+  if (winScroll > 5880) {
+    $('.tip').css({
+      'position': 'absolute',
+      'top': '628px'
+    });
+  }
 });
+'use strict';
+
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});

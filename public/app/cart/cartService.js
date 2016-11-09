@@ -13,6 +13,13 @@ this.removeItem = (item_id) => {
     method: "DELETE",
     url: "/api/delete/item/cart/" + item_id
   })
+};
+
+this.placeOrder = (user_id, order_id) => {
+  return $http({
+    method: 'PUT',
+    url: '/api/order/complete/' + order_id + '/' + user_id
+  })
 }
 
  //===END SERVICE=======
