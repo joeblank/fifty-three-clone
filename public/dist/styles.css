@@ -466,7 +466,8 @@
     font-size: 1.625em;
     line-height: 1.2;
     margin-top: 18px;
-    width: 600px;
+    width: 655px;
+    margin-bottom: 31px;
     text-align: center; }
   .crafted-wrap .parallax-wrap {
     display: flex;
@@ -479,37 +480,139 @@
       height: 115px;
       background: url("./../images/sprite-parts@2x.png") no-repeat 47% 81px, url("./../images/sprite-shadow@1.5x.png") no-repeat 47% 81px;
       z-index: 5;
-      background-size: 95px auto; }
+      background-size: 95px auto;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .eraser-tip .left-eraser {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: 97px;
+        left: 50%;
+        margin-left: -275px; }
+      .crafted-wrap .parallax-wrap .eraser-tip .right-eraser {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: 97px;
+        right: 50%;
+        margin-right: -400px; }
     .crafted-wrap .parallax-wrap .bluetooth {
       width: 719px;
       height: 276px;
       background: url("./../images/sprite-parts@2x.png") no-repeat 47% -184px, url("./../images/sprite-shadow@1.5x.png") no-repeat 47% -184px;
       background-size: 95px auto;
-      z-index: 4; }
+      z-index: 4;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .bluetooth .left-bluetooth {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -335.5px; }
+      .crafted-wrap .parallax-wrap .bluetooth .right-bluetooth {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        right: 50%;
+        margin-right: -400px; }
     .crafted-wrap .parallax-wrap .body {
       width: 719px;
       height: 592px;
       background: url("./../images/sprite-body@1.5x.png") no-repeat 47% -25px;
       background-size: 95px auto;
-      z-index: 6; }
+      z-index: 6;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .body .left-body {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -326px; }
+      .crafted-wrap .parallax-wrap .body .right-body {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        right: 50%;
+        margin-right: -400px; }
     .crafted-wrap .parallax-wrap .battery {
       width: 719px;
       height: 326px;
       background: url("./../images/sprite-parts@2x.png") no-repeat 47% -461px, url("./../images/sprite-shadow@1.5x.png") no-repeat 47% -461px;
       background-size: 95px auto;
-      z-index: 2; }
+      z-index: 2;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .battery .left-battery {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -316.1px; }
+      .crafted-wrap .parallax-wrap .battery .right-battery {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        right: 50%;
+        margin-right: -400px; }
     .crafted-wrap .parallax-wrap .sensor {
       width: 719px;
       height: 122px;
       background: url("./../images/sprite-parts@2x.png") no-repeat 47% -835px, url("./../images/sprite-shadow@1.5x.png") no-repeat 47% -835px;
       z-index: 1;
-      background-size: 95px auto; }
+      background-size: 95px auto;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .sensor .left-sensor {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -343.39px; }
+      .crafted-wrap .parallax-wrap .sensor .right-sensor {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        right: 50%;
+        margin-right: -400px; }
     .crafted-wrap .parallax-wrap .tip {
       width: 719px;
       height: 160px;
       background: url("./../images/sprite-parts@2x.png") no-repeat 47% -1025px, url("./../images/sprite-shadow@1.5x.png") no-repeat 47% -1025px;
       background-size: 95px auto;
-      z-index: 3; }
+      z-index: 3;
+      font-family: "Roboto", sans-serif;
+      color: #FFFCF5; }
+      .crafted-wrap .parallax-wrap .tip .left-tip {
+        display: none;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -291.31px; }
+      .crafted-wrap .parallax-wrap .tip .right-tip {
+        display: none;
+        width: 201px;
+        font-size: 1.25em;
+        position: absolute;
+        top: -2px;
+        right: 50%;
+        margin-right: -400px; }
 
 .walnut-aluminum-wrap {
   width: 100%;
