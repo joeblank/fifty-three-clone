@@ -349,7 +349,13 @@ $b-bottom: #e0e0e0;
       background-size: 95px auto;
       z-index: 2;
     }
-    .sensor {}
+    .sensor {
+      width: 719px;
+      height: 122px;
+      background: url('./../images/sprite-parts@2x.png') no-repeat 47% -835px, url('./../images/sprite-shadow@1.5x.png') no-repeat 47% -835px;
+      z-index: 1;
+      background-size: 95px auto;
+    }
     .tip {
       width: 719px;
       height: 160px;

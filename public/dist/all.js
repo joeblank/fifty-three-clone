@@ -175,6 +175,9 @@ angular.module('fifty-three').service('cartService', function ($http, $q, $state
 });
 'use strict';
 
+angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
+'use strict';
+
 angular.module('fifty-three').controller('pencilCtrl', function ($scope, $anchorScroll, $location) {
   $scope.scrollTo = function (id) {
     $location.hash(id);
@@ -334,25 +337,19 @@ $(window).scroll(function () {
     });
   } else {
     $('.body').css({
-      'position': 'static'
+      'position': 'absolute',
+      'top': '115px'
     });
-  };
+  }
   if (winScroll > 5400) {
     $('.body').css({
       'position': 'absolute',
       'top': '628px'
     });
-  };
+  }
   // BATTERY
   if (winScroll > 4899) {
     $('.battery').css({
-      'position': 'fixed',
-      'top': '512px'
-    });
-  };
-  // TIP
-  if (winScroll > 4899) {
-    $('.tip').css({
       'position': 'fixed',
       'top': '512px'
     });
@@ -361,16 +358,85 @@ $(window).scroll(function () {
       'position': 'static'
     });
   };
-  if (winScroll > 5880) {
+  if (winScroll > 5780) {
+    $('.battery').css({
+      'position': 'absolute',
+      'top': '1097px'
+    });
+  };
+  if (winScroll > 5717) {
+    $('.battery').css({
+      'position': 'fixed',
+      'top': '202px'
+    });
+  };
+  if (winScroll > 6355) {
+    $('.battery').css({
+      'position': 'absolute',
+      'top': '1260px'
+    });
+  }
+
+  // SENSOR
+  if (winScroll > 4899) {
+    $('.sensor').css({
+      'position': 'fixed',
+      'top': '512px'
+    });
+  } else {
+    $('.sensor').css({
+      'position': 'static'
+    });
+  };
+  if (winScroll > 5780) {
+    $('.sensor').css({
+      'position': 'absolute',
+      'top': '1097px'
+    });
+  };
+  if (winScroll > 5924) {
+    $('.sensor').css({
+      'position': 'fixed',
+      'top': '461px'
+    });
+  };
+  if (winScroll > 6650) {
+    $('.sensor').css({
+      'position': 'absolute',
+      'top': '1650px'
+    });
+  }
+
+  // TIP
+  if (winScroll > 4899) {
+    $('.tip').css({
+      'position': 'fixed',
+      'top': '512px'
+    });
+  } else {
+    $('.tip').css({
+      'position': 'static'
+    });
+  };
+  if (winScroll > 5780) {
     $('.tip').css({
       'position': 'absolute',
-      'top': '628px'
+      'top': '1097px'
+    });
+  };
+  if (winScroll > 5924) {
+    $('.tip').css({
+      'position': 'fixed',
+      'top': '468px'
+    });
+  };
+  if (winScroll > 6650) {
+    $('.tip').css({
+      'position': 'absolute',
+      'top': '1825px'
     });
   }
 });
-'use strict';
-
-angular.module('fifty-three').controller('paperCtrl', function ($scope) {});
 'use strict';
 
 angular.module('fifty-three').controller('shopCtrl', function ($scope, shopService) {});
