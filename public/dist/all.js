@@ -540,6 +540,15 @@ angular.module('fifty-three').controller('shopCtrl', function ($scope, shopServi
 angular.module('fifty-three').service('shopService', function ($http, $q) {});
 'use strict';
 
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
+});
+'use strict';
+
 angular.module('fifty-three').directive('carouselDir', function () {
 
   return {
@@ -582,8 +591,8 @@ angular.module('fifty-three').directive('carouselDir', function () {
       $scope.addToCart = function (pencil) {
         if (!$scope.currentUser) {
           $(function () {
-            $('.modal-outer-wrapper').fadeIn(500);
-            $('.modal-outer-wrapper').css({
+            $('.dk-outer-wrapper').fadeIn(500);
+            $('.dk-outer-wrapper').css({
               "display": "flex"
             });
             $('.modal-outer-wrapper').on('click', function () {
@@ -679,6 +688,23 @@ angular.module('fifty-three').directive('carouselDir', function () {
         });
       });
 
+      //MODAL JQUERY
+      $(function () {
+        $('.dk-sign-up').on('click', function () {
+          $('.dk-outer-wrapper').fadeOut(1000);
+          $('.kd-outer-wrapper').fadeIn(100);
+          $('.kd-outer-wrapper').css({
+            "display": "flex"
+          });
+        });
+        $('.kd-sign-in').on('click', function () {
+          $('.kd-outer-wrapper').fadeOut(1000);
+          $('.dk-outer-wrapper').fadeIn(100);
+          $('.dk-outer-wrapper').css({
+            "display": "flex"
+          });
+        });
+      });
       //===END CONTROLLER==
     }
     //===END RETURN========
@@ -730,15 +756,6 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
-});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
 });
 'use strict';
 

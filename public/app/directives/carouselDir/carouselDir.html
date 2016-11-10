@@ -43,7 +43,7 @@
 
 <!-- //===SIGN-IN MODAL====================== -->
 <!-- <section ng-hide='hideModal' ng-click='hideModal=true' class="modal-outer-wrapper"> -->
-<section class="modal-outer-wrapper">
+<!-- <section class="modal-outer-wrapper">
   <div ng-click='$event.stopPropagation()' class="modal-container">
     <div class="upper-wrapper">
       <div class="sign-in">SIGN IN</div>
@@ -80,9 +80,10 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- UPDATED MODAL -->
+<!-- SIGN-IN MODAL -->
 <section class='dk-outer-wrapper'>
   <section class="dk-container">
     <img class='dk-53' src="./../images/53-light.svg" alt="" />
@@ -92,8 +93,29 @@
       <div class="dk-sign-in">Sign-in</div>
       <div class="dk-sign-up">Sign-up</div>
     </div>
-    <input class='dk-email' type="text" name="name" placeholder="email address">
-    <input class='dk-password' type="password" name="name" placeholder="password">
-    <div class="dk-sign-in-btn">Sign-in</div>
+    <form ng-submit='login(user)'>
+      <input ng-model='user.email' class='dk-email' type="email" name="name" placeholder="email address" required>
+      <input ng-model='user.password' class='dk-password' type="password" name="name" placeholder="password" required>
+      <button type="submit" class="dk-sign-in-btn">Sign-in</button>
+    </form>
+  </section>
+</section>
+<!-- SIGN-UP MODAL -->
+<section class='kd-outer-wrapper'>
+  <section class="kd-container">
+    <img class='kd-53' src="./../images/53-light.svg" alt="" />
+    <img class='kd-user-icon' src="./../images/user-icon.png" alt="" />
+    <img class='kd-lock' src="./../images/rateLockGraphic.png" alt="" />
+    <img class='kd-email-icon' src="./../images/email-icon.png" alt="" />
+    <div class="kd-sign-in-up-wrap">
+      <div class="kd-sign-in">Sign-in</div>
+      <div class="kd-sign-up">Sign-up</div>
+    </div>
+    <form class="form-wrapper" ng-submit='register(newUser)'>
+      <input ng-model='newUser.name' class='kd-name' type="text" name="name" placeholder="username" required>
+      <input ng-model='newUser.email' class='kd-email' type="email" name="name" placeholder="email address" required>
+      <input ng-model='newUser.password' class='kd-password' type="password" name="name" placeholder="password" required>
+      <button type='submit' class="kd-sign-in-btn">Sign-up</button>
+    </form>
   </section>
 </section>

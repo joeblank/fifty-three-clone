@@ -41,8 +41,8 @@ angular.module('fifty-three')
       $scope.addToCart = (pencil) => {
         if (!$scope.currentUser) {
           $(() => {
-            $('.modal-outer-wrapper').fadeIn(500);
-            $('.modal-outer-wrapper').css({
+            $('.dk-outer-wrapper').fadeIn(500);
+            $('.dk-outer-wrapper').css({
               "display": "flex"
             });
             $('.modal-outer-wrapper').on('click', () => {
@@ -141,6 +141,24 @@ angular.module('fifty-three')
           });
         })
 
+
+        //MODAL JQUERY
+        $(() => {
+          $('.dk-sign-up').on('click', () => {
+            $('.dk-outer-wrapper').fadeOut(1000);
+            $('.kd-outer-wrapper').fadeIn(100);
+            $('.kd-outer-wrapper').css({
+              "display": "flex"
+            });
+          });
+          $('.kd-sign-in').on('click', () => {
+            $('.kd-outer-wrapper').fadeOut(1000);
+            $('.dk-outer-wrapper').fadeIn(100);
+            $('.dk-outer-wrapper').css({
+              "display": "flex"
+            });
+          })
+        })
     //===END CONTROLLER==
     }
   //===END RETURN========

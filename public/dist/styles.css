@@ -1399,69 +1399,15 @@
           font-size: 15px;
           font-weight: lighter; }
 
-.modal-outer-wrapper {
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  justify-content: center;
-  align-items: center;
-  font-family: "Roboto", sans-serif; }
-  .modal-outer-wrapper .modal-container {
-    opacity: 1;
-    width: 400px;
-    height: 400px;
-    background: #F1EAE0;
-    border-radius: 25px; }
-    .modal-outer-wrapper .modal-container .upper-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 30px 0 0 0; }
-      .modal-outer-wrapper .modal-container .upper-wrapper .email-pass-container {
-        display: flex;
-        flex-direction: column; }
-        .modal-outer-wrapper .modal-container .upper-wrapper .email-pass-container .email-pass-wrapper {
-          display: flex; }
-          .modal-outer-wrapper .modal-container .upper-wrapper .email-pass-container .email-pass-wrapper .email-wrap {
-            display: flex;
-            flex-direction: column;
-            text-align: right; }
-          .modal-outer-wrapper .modal-container .upper-wrapper .email-pass-container .email-pass-wrapper .password-wrap {
-            display: flex;
-            flex-direction: column; }
-    .modal-outer-wrapper .modal-container .lower-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 30px 0 0 0; }
-      .modal-outer-wrapper .modal-container .lower-wrapper .form-wrapper {
-        display: flex;
-        flex-direction: column; }
-        .modal-outer-wrapper .modal-container .lower-wrapper .form-wrapper .outer-container {
-          display: flex; }
-          .modal-outer-wrapper .modal-container .lower-wrapper .form-wrapper .outer-container .name-wrap {
-            display: flex;
-            flex-direction: column;
-            text-align: right; }
-          .modal-outer-wrapper .modal-container .lower-wrapper .form-wrapper .outer-container .input-wrap {
-            display: flex;
-            flex-direction: column; }
-
 .dk-outer-wrapper {
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   font-family: "Roboto", sans-serif; }
   .dk-outer-wrapper .dk-container {
     width: 300px;
@@ -1501,29 +1447,39 @@
         text-align: center;
         width: 50%;
         font-size: 25px;
-        border-right: solid 1px; }
+        border-right: solid 1px;
+        cursor: pointer; }
       .dk-outer-wrapper .dk-container .dk-sign-in-up-wrap .dk-sign-up {
         text-align: center;
         width: 50%;
-        font-size: 25px; }
-    .dk-outer-wrapper .dk-container .dk-email {
-      width: 275px;
-      height: 40px;
-      margin-top: 90px;
-      background: white;
-      color: #66625B;
-      font-size: 20px;
-      border-radius: 5px;
-      padding-left: 40px; }
-    .dk-outer-wrapper .dk-container .dk-password {
-      width: 275px;
-      height: 40px;
-      margin-top: 20px;
-      background-color: white;
-      color: #66625B;
-      font-size: 20px;
-      border-radius: 5px;
-      padding-left: 40px; }
+        font-size: 25px;
+        cursor: pointer; }
+    .dk-outer-wrapper .dk-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .dk-outer-wrapper .dk-container form .dk-email {
+        width: 275px;
+        height: 40px;
+        margin-top: 90px;
+        background: white;
+        color: #66625B;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 40px; }
+      .dk-outer-wrapper .dk-container form .dk-email:focus {
+        outline: none; }
+      .dk-outer-wrapper .dk-container form .dk-password {
+        width: 275px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: white;
+        color: #66625B;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 40px; }
+      .dk-outer-wrapper .dk-container form .dk-password:focus {
+        outline: none; }
     .dk-outer-wrapper .dk-container .dk-sign-in-btn {
       width: 300px;
       height: 50px;
@@ -1535,7 +1491,125 @@
       border-radius: 0 0 15px 15px;
       position: absolute;
       bottom: 0px;
-      font-size: 25px; }
+      font-size: 25px;
+      border: none;
+      cursor: pointer; }
+    .dk-outer-wrapper .dk-container .dk-password:focus {
+      outline: none; }
+
+.kd-outer-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  font-family: "Roboto", sans-serif; }
+  .kd-outer-wrapper .kd-container {
+    width: 300px;
+    height: 325px;
+    background: #66625B;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; }
+    .kd-outer-wrapper .kd-container .kd-53 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 61px; }
+    .kd-outer-wrapper .kd-container .kd-user-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 126px;
+      left: 18px; }
+    .kd-outer-wrapper .kd-container .kd-lock {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 229px;
+      left: 18px; }
+    .kd-outer-wrapper .kd-container .kd-email-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 178px;
+      left: 18px; }
+    .kd-outer-wrapper .kd-container .kd-sign-in-up-wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: #66625B;
+      background: white;
+      border-radius: 15px 15px 0 0; }
+      .kd-outer-wrapper .kd-container .kd-sign-in-up-wrap .kd-sign-in {
+        text-align: center;
+        width: 50%;
+        font-size: 25px;
+        border-right: solid 1px;
+        cursor: pointer; }
+      .kd-outer-wrapper .kd-container .kd-sign-in-up-wrap .kd-sign-up {
+        text-align: center;
+        width: 50%;
+        font-size: 25px;
+        cursor: pointer; }
+    .kd-outer-wrapper .kd-container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .kd-outer-wrapper .kd-container form .kd-name {
+        width: 275px;
+        height: 40px;
+        margin-top: 70px;
+        background: white;
+        color: #66625B;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px; }
+      .kd-outer-wrapper .kd-container form .kd-name:focus {
+        outline: none; }
+      .kd-outer-wrapper .kd-container form .kd-email {
+        width: 275px;
+        height: 40px;
+        margin-top: 12px;
+        background: white;
+        color: #66625B;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px; }
+      .kd-outer-wrapper .kd-container form .kd-email:focus {
+        outline: none; }
+      .kd-outer-wrapper .kd-container form .kd-password {
+        width: 275px;
+        height: 40px;
+        margin-top: 12px;
+        background-color: white;
+        color: #66625B;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px; }
+      .kd-outer-wrapper .kd-container form .kd-password:focus {
+        outline: none; }
+      .kd-outer-wrapper .kd-container form .kd-sign-in-btn {
+        width: 300px;
+        height: 50px;
+        background: white;
+        color: #66625B;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+        position: absolute;
+        bottom: 0px;
+        font-size: 25px;
+        cursor: pointer; }
+      .kd-outer-wrapper .kd-container form .kd-sign-in-btn:focus {
+        outline: none; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .outer-wrapper {

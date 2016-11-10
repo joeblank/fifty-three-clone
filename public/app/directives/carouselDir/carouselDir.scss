@@ -154,90 +154,90 @@ $shipping-bg: #66615B;
     }
   }
 }
-.modal-outer-wrapper {
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.5);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  // display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: $main-font;
-  .modal-container {
-    opacity: 1;
-    width: 400px;
-    height: 400px;
-    background: $this-color;
-    border-radius: 25px;
-    .upper-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 30px 0 0 0;
-      .sign-in {}
-      .email-pass-container {
-        display: flex;
-        flex-direction: column;
-        .email-pass-wrapper {
-          display: flex;
-          .email-wrap {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-            .email {}
-            .password {}
-          }
-          .password-wrap {
-            display: flex;
-            flex-direction: column;
-            input {}
-          }
-        }
-      }
-    }
-    .lower-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      margin: 30px 0 0 0;
-      .sign-up {}
-      .form-wrapper {
-        display: flex;
-        flex-direction: column;
-        .outer-container {
-          display: flex;
-          .name-wrap {
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-            .name {}
-            .email {}
-            .password {}
-          }
-          .input-wrap {
-            display: flex;
-            flex-direction: column;
-            input {}
-          }
-        }
-      }
-    }
-  }
-}
+// .modal-outer-wrapper {
+//   display: none;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0,0,0,.5);
+//   position: fixed;
+//   top: 0px;
+//   left: 0px;
+//   // display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-family: $main-font;
+//   .modal-container {
+//     opacity: 1;
+//     width: 400px;
+//     height: 400px;
+//     background: $this-color;
+//     border-radius: 25px;
+//     .upper-wrapper {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       width: 100%;
+//       margin: 30px 0 0 0;
+//       .sign-in {}
+//       .email-pass-container {
+//         display: flex;
+//         flex-direction: column;
+//         .email-pass-wrapper {
+//           display: flex;
+//           .email-wrap {
+//             display: flex;
+//             flex-direction: column;
+//             text-align: right;
+//             .email {}
+//             .password {}
+//           }
+//           .password-wrap {
+//             display: flex;
+//             flex-direction: column;
+//             input {}
+//           }
+//         }
+//       }
+//     }
+//     .lower-wrapper {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       width: 100%;
+//       margin: 30px 0 0 0;
+//       .sign-up {}
+//       .form-wrapper {
+//         display: flex;
+//         flex-direction: column;
+//         .outer-container {
+//           display: flex;
+//           .name-wrap {
+//             display: flex;
+//             flex-direction: column;
+//             text-align: right;
+//             .name {}
+//             .email {}
+//             .password {}
+//           }
+//           .input-wrap {
+//             display: flex;
+//             flex-direction: column;
+//             input {}
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 .dk-outer-wrapper {
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.8);
   font-family: $main-font;
   .dk-container {
     width: 300px;
@@ -281,32 +281,45 @@ $shipping-bg: #66615B;
         width: 50%;
         font-size: 25px;
         border-right: solid 1px;
+        cursor: pointer;
       }
       .dk-sign-up {
         text-align: center;
         width: 50%;
         font-size: 25px;
+        cursor: pointer;
       }
     }
-    .dk-email {
-      width: 275px;
-      height: 40px;
-      margin-top: 90px;
-      background: $nav-text-color;
-      color: $paper-text-color;
-      font-size: 20px;
-      border-radius: 5px;
-      padding-left: 40px;
-    }
-    .dk-password {
-      width: 275px;
-      height: 40px;
-      margin-top: 20px;
-      background-color: $nav-text-color;
-      color: $paper-text-color;
-      font-size: 20px;
-      border-radius: 5px;
-      padding-left: 40px;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .dk-email {
+        width: 275px;
+        height: 40px;
+        margin-top: 90px;
+        background: $nav-text-color;
+        color: $paper-text-color;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 40px;
+      }
+      .dk-email:focus {
+        outline: none;
+      }
+      .dk-password {
+        width: 275px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: $nav-text-color;
+        color: $paper-text-color;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 40px;
+      }
+      .dk-password:focus {
+        outline: none;
+      }
     }
     .dk-sign-in-btn {
       width: 300px;
@@ -320,6 +333,142 @@ $shipping-bg: #66615B;
       position: absolute;
       bottom: 0px;
       font-size: 25px;
+      border: none;
+      cursor: pointer;
+    }
+    .dk-password:focus {
+      outline: none;
+    }
+  }
+}
+.kd-outer-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.8);
+  font-family: $main-font;
+  .kd-container {
+    width: 300px;
+    height: 325px;
+    background: $paper-text-color;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .kd-53 {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 61px;
+    }
+    .kd-user-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 126px;
+      left: 18px;
+    }
+    .kd-lock {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 229px;
+      left: 18px;
+    }
+    .kd-email-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 178px;
+      left: 18px;
+    }
+    .kd-sign-in-up-wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      color: $paper-text-color;
+      background: $nav-text-color;
+      border-radius: 15px 15px 0 0;
+      .kd-sign-in {
+        text-align: center;
+        width: 50%;
+        font-size: 25px;
+        border-right: solid 1px;
+        cursor: pointer;
+      }
+      .kd-sign-up {
+        text-align: center;
+        width: 50%;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .kd-name {
+        width: 275px;
+        height: 40px;
+        margin-top: 70px;
+        background: $nav-text-color;
+        color: $paper-text-color;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px;
+      }
+      .kd-name:focus {
+        outline: none;
+      }
+      .kd-email {
+        width: 275px;
+        height: 40px;
+        margin-top: 12px;
+        background: $nav-text-color;
+        color: $paper-text-color;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px;
+      }
+      .kd-email:focus {
+        outline: none;
+      }
+      .kd-password {
+        width: 275px;
+        height: 40px;
+        margin-top: 12px;
+        background-color: $nav-text-color;
+        color: $paper-text-color;
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 45px;
+      }
+      .kd-password:focus {
+        outline: none;
+      }
+      .kd-sign-in-btn {
+        width: 300px;
+        height: 50px;
+        background: $nav-text-color;
+        color: $paper-text-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 0 15px 15px;
+        position: absolute;
+        bottom: 0px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .kd-sign-in-btn:focus {
+        outline: none;
+      }
     }
   }
 }
