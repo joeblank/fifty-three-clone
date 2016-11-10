@@ -20,6 +20,7 @@ $paper-text-color: #66625B;
       position: absolute;
       top: 135px;
       left: 90px;
+      z-index: 255;
     }
     .sign-in-container {
       display: flex;
@@ -31,12 +32,21 @@ $paper-text-color: #66625B;
       font-size: 15px;
       font-family: $main-font;
       font-weight: lighter;
-      .sign-in {}
+      .sign-in {
+        text-decoration: none;
+        color: $nav-text-color;
+        font-size: 20px;
+        z-index: 255;
+      }
       .download {
         border: solid 1px $nav-text-color;
         border-radius: 100px;
         margin-left: 10px;
         padding: 8px 10px 8px 10px;
+        text-decoration: none;
+        color: $nav-text-color;
+        font-size: 20px;
+        z-index: 255;
       }
     }
     .outer-video-wrap {
@@ -219,7 +229,7 @@ $paper-text-color: #66625B;
       }
     }
     .mid-vid-wrapper {
-      margin: 400px 0px 75px 0px;
+      margin: 300px 0px 75px 0px;
       // .filler {
       //   width: 200%;
       //   height: 360px;

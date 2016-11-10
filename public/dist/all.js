@@ -581,7 +581,18 @@ angular.module('fifty-three').directive('carouselDir', function () {
 
       $scope.addToCart = function (pencil) {
         if (!$scope.currentUser) {
-          return $scope.hideModal = false;
+          $(function () {
+            $('.modal-outer-wrapper').fadeIn(500);
+            $('.modal-outer-wrapper').css({
+              "display": "flex"
+            });
+            $('.modal-outer-wrapper').on('click', function () {
+              $('.modal-outer-wrapper').fadeOut(500);
+            });
+          });
+
+          return;
+          // return $scope.hideModal = false;
         }
         console.log(pencil);
         authService.getUserOrder($scope.currentUser.id).then(function (user_basket) {
@@ -628,7 +639,7 @@ angular.module('fifty-three').directive('carouselDir', function () {
         });
       };
 
-      $scope.hideModal = true;
+      // $scope.hideModal = true;
       //===JQUERY==================================
       $(function () {
         $('.gold').on('click', function () {

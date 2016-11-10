@@ -42,7 +42,8 @@
 {{pencil}}
 
 <!-- //===SIGN-IN MODAL====================== -->
-<section ng-hide='hideModal' ng-click='hideModal=true' class="modal-outer-wrapper">
+<!-- <section ng-hide='hideModal' ng-click='hideModal=true' class="modal-outer-wrapper"> -->
+<section class="modal-outer-wrapper">
   <div ng-click='$event.stopPropagation()' class="modal-container">
     <div class="upper-wrapper">
       <div class="sign-in">SIGN IN</div>
@@ -79,4 +80,20 @@
       </form>
     </div>
   </div>
+</section>
+
+<!-- UPDATED MODAL -->
+<section class='dk-outer-wrapper'>
+  <section class="dk-container">
+    <img class='dk-53' src="./../images/53-light.svg" alt="" />
+    <img class='dk-lock' src="./../images/rateLockGraphic.png" alt="" />
+    <img class='dk-email-icon' src="./../images/email-icon.png" alt="" />
+    <div class="dk-sign-in-up-wrap">
+      <div class="dk-sign-in">Sign-in</div>
+      <div class="dk-sign-up">Sign-up</div>
+    </div>
+    <input class='dk-email' type="text" name="name" placeholder="email address">
+    <input class='dk-password' type="password" name="name" placeholder="password">
+    <div class="dk-sign-in-btn">Sign-in</div>
+  </section>
 </section>

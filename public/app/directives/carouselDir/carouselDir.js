@@ -40,7 +40,18 @@ angular.module('fifty-three')
 
       $scope.addToCart = (pencil) => {
         if (!$scope.currentUser) {
-          return $scope.hideModal = false;
+          $(() => {
+            $('.modal-outer-wrapper').fadeIn(500);
+            $('.modal-outer-wrapper').css({
+              "display": "flex"
+            });
+            $('.modal-outer-wrapper').on('click', () => {
+              $('.modal-outer-wrapper').fadeOut(500);
+            })
+          })
+
+          return;
+          // return $scope.hideModal = false;
         }
         console.log(pencil);
         authService.getUserOrder($scope.currentUser.id)
@@ -90,7 +101,7 @@ angular.module('fifty-three')
       };
 
 
-      $scope.hideModal = true;
+      // $scope.hideModal = true;
       //===JQUERY==================================
       $(() =>  {
         $('.gold').on('click', () => {
