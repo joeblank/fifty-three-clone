@@ -39,7 +39,57 @@ $paper-text-color: #66625B;
         padding: 8px 10px 8px 10px;
       }
     }
-    .stupid-video {}
+    .outer-video-wrap {
+      .shade {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.9);
+        z-index: 10;
+        font-family: $main-font;
+        color: white;
+        .watch-wrap {
+          position: absolute;
+          top: 250px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          .put {
+            font-size: 40px;
+            z-index: 11;
+            margin-bottom: 10px;
+          }
+          .paper {
+            font-size: 120px;
+            z-index: 11;
+          }
+          .watch {
+            width: 200px;
+            font-size: 20px;
+            border: solid;
+            border-width: 1px;
+            border-radius: 100px;
+            padding: 11px;
+            text-align: center;
+            cursor: pointer;
+            margin: 20px 0;
+          }
+          .download {
+            width: 200px;
+            font-size: 20px;
+            border-radius: 100px;
+            padding: 11px;
+            background: white;
+            color: black;
+            margin-top: 15px;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
   .middle-container {
     width: 100%;
@@ -55,48 +105,121 @@ $paper-text-color: #66625B;
       font-family: $main-font;
       color: $paper-text-color;
       margin-top: 100px;
+      margin-bottom: 70px;
       width: 750px;
       text-align: center;
     }
-    .orange-icon-container {
-      display: flex;
-      margin-top: 100px;
-      .orange-letter {
-        width: 50px;
-        height: 45px;
-      }
-      .plus {
-        font-size: 25px;
-        font-weight: bold;
-        color: grey;
-      }
-      .orange-camera {
-        width: 50px;
-        height: 45px;
-      }
-      .orange-line {
-        width: 50px;
-        height: 45px;
-      }
-    }
     .descriptions-container {
-      width: 750px;
+      width: 100%;
       display: flex;
+      justify-content: center;
       margin-top: 50px;
       font-size: 20px;
       font-family: $main-font;
       font-weight: lighter;
+      position: relative;
+      .plus-one {
+        position: absolute;
+        top: 15px;
+        right: 32%;
+        color: gray;
+        font-size: 40px;
+      }
+      .plus-two {
+        position: absolute;
+        top: 15px;
+        left: 32%;
+        color: gray;
+        font-size: 40px;
+
+      }
       .notes-container {
+        width: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+        .notes-letter {
+          width: 55px;
+          height: 55px;
+          position: absolute;
+          top: 0px;
+        }
         .notes-title {
-          .notes {}
+          font-size: 22px;
+          margin: 20px 0px;
+          position: absolute;
+          top: 50px;
+        }
+        .notes {
+          width: 300px;
+          font-size: 18px;
+          line-height: 1.2;
+          position: absolute;
+          top: 110px;
+        }
+      }
+      .photos-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+        .photos-letter {
+          width: 70px;
+          height: 55px;
+          position: absolute;
+          top: 0px;
+        }
+        .photos-title {
+          font-size: 22px;
+          margin: 20px 0px;
+          position: absolute;
+          top: 50px;
+        }
+        .photos {
+          width: 300px;
+          font-size: 18px;
+          line-height: 1.2;
+          position: absolute;
+          top: 110px;
+        }
+      }
+      .sketches-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin: 0 20px;
+        .sketches-letter {
+          width: 90px;
+          height: 55px;
+          position: absolute;
+          top: 0px;
+        }
+        .sketches-title {
+          font-size: 22px;
+          margin: 20px 0px;
+          position: absolute;
+          top: 50px;
+        }
+        .sketches {
+          width: 300px;
+          font-size: 18px;
+          line-height: 1.2;
+          position: absolute;
+          top: 110px;
         }
       }
     }
     .mid-vid-wrapper {
-      margin: 75px 0px;
+      margin: 400px 0px 75px 0px;
       // .filler {
       //   width: 200%;
       //   height: 360px;
@@ -172,6 +295,8 @@ $paper-text-color: #66625B;
           font-weight: lighter;
           text-decoration: none;
           margin-top: 265px;
+          position: absolute;
+          bottom: 100px;
         }
         a:hover {
           opacity: .7;
