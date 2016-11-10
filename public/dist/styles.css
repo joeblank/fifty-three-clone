@@ -492,12 +492,12 @@
         margin-left: -275px; }
       .crafted-wrap .parallax-wrap .eraser-tip .right-eraser {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: 97px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
     .crafted-wrap .parallax-wrap .bluetooth {
       width: 719px;
       height: 276px;
@@ -515,12 +515,12 @@
         margin-left: -335.5px; }
       .crafted-wrap .parallax-wrap .bluetooth .right-bluetooth {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: -2px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
     .crafted-wrap .parallax-wrap .body {
       width: 719px;
       height: 592px;
@@ -538,12 +538,12 @@
         margin-left: -326px; }
       .crafted-wrap .parallax-wrap .body .right-body {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: -2px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
     .crafted-wrap .parallax-wrap .battery {
       width: 719px;
       height: 326px;
@@ -561,12 +561,12 @@
         margin-left: -316.1px; }
       .crafted-wrap .parallax-wrap .battery .right-battery {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: -2px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
     .crafted-wrap .parallax-wrap .sensor {
       width: 719px;
       height: 122px;
@@ -584,12 +584,12 @@
         margin-left: -343.39px; }
       .crafted-wrap .parallax-wrap .sensor .right-sensor {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: -2px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
     .crafted-wrap .parallax-wrap .tip {
       width: 719px;
       height: 160px;
@@ -607,12 +607,12 @@
         margin-left: -291.31px; }
       .crafted-wrap .parallax-wrap .tip .right-tip {
         display: none;
-        width: 201px;
+        width: 250px;
         font-size: 1.25em;
         position: absolute;
         top: -2px;
         right: 50%;
-        margin-right: -400px; }
+        margin-right: -441px; }
 
 .walnut-aluminum-wrap {
   width: 100%;
@@ -626,12 +626,15 @@
     font-family: "Roboto", sans-serif;
     font-weight: lighter;
     color: white;
-    position: relative; }
+    position: relative;
+    display: flex;
+    justify-content: center; }
     .walnut-aluminum-wrap .walnut-wrap .walnut {
       position: absolute;
-      top: 80px;
-      left: 50%;
-      width: 210px; }
+      top: 70px;
+      width: 385px;
+      display: flex;
+      flex-direction: column; }
       .walnut-aluminum-wrap .walnut-wrap .walnut .title {
         font-size: 22px;
         font-weight: bold; }
@@ -647,12 +650,15 @@
     font-family: "Roboto", sans-serif;
     font-weight: lighter;
     color: white;
-    position: relative; }
+    position: relative;
+    display: flex;
+    justify-content: center; }
     .walnut-aluminum-wrap .aluminum-wrap .aluminum {
       position: absolute;
-      top: 80px;
-      right: 50%;
-      width: 210px; }
+      top: 70px;
+      width: 385px;
+      display: flex;
+      flex-direction: column; }
       .walnut-aluminum-wrap .aluminum-wrap .aluminum .title {
         font-size: 22px;
         font-weight: bold; }
@@ -689,7 +695,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-1 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-2 {
     position: absolute;
@@ -713,7 +719,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-2 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-3 {
     position: absolute;
@@ -737,7 +743,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-3 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-4 {
     position: absolute;
@@ -761,7 +767,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-4 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-5 {
     position: absolute;
@@ -785,7 +791,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-5 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-6 {
     position: absolute;
@@ -809,7 +815,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-6 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-7 {
     position: absolute;
@@ -833,7 +839,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-7 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-8 {
     position: absolute;
@@ -857,7 +863,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-8 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-9 {
     position: absolute;
@@ -881,7 +887,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-9 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-10 {
     position: absolute;
@@ -905,7 +911,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-10 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
   .pencil-rotation-wrap .p-11 {
     position: absolute;
@@ -929,7 +935,7 @@
         font-weight: bold;
         margin-bottom: 10px; }
       .pencil-rotation-wrap .p-11 .inspired-wrapper .text {
-        font-size: 1.125em;
+        font-size: 1.15em;
         line-height: 1.4; }
 
 .simply-works-outer-container {
@@ -939,37 +945,173 @@
   font-family: "Roboto", sans-serif;
   background: #FFFCF5;
   width: 100%;
-  padding: 150px 0 100px 0; }
+  padding: 150px 0 0px 0; }
   .simply-works-outer-container .simply-works {
     color: #66625B;
     font-size: 4.5em; }
   .simply-works-outer-container .best-tools {
-    width: 700px;
+    width: 865px;
     text-align: center;
     font-size: 1.625em;
     margin-top: 18px;
     line-height: 1.2; }
   .simply-works-outer-container .power-it-up-container {
     display: flex;
-    justify-content: space-around; }
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 75px; }
     .simply-works-outer-container .power-it-up-container .power-it-up {
       display: flex;
       flex-direction: column;
       width: 264.2px; }
+      .simply-works-outer-container .power-it-up-container .power-it-up .icon {
+        width: 269px;
+        height: 182px;
+        background: url("./../images/pencil-icons-sprite.svg") no-repeat;
+        background-position: 50% -784px;
+        background-size: 350px auto;
+        margin-bottom: -10px; }
       .simply-works-outer-container .power-it-up-container .power-it-up .title {
-        text-align: center; }
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px; }
+      .simply-works-outer-container .power-it-up-container .power-it-up .text {
+        font-size: 20px;
+        line-height: 1.05; }
     .simply-works-outer-container .power-it-up-container .kiss-to-pair {
       display: flex;
       flex-direction: column;
-      width: 264.2px; }
+      width: 264.2px;
+      margin: 0 50px 0 50px; }
+      .simply-works-outer-container .power-it-up-container .kiss-to-pair .icon {
+        width: 269px;
+        height: 182px;
+        background: url("./../images/pencil-icons-sprite.svg") no-repeat;
+        background-position: 50% -588px;
+        background-size: 350px auto;
+        margin-bottom: -10px; }
       .simply-works-outer-container .power-it-up-container .kiss-to-pair .title {
-        text-align: center; }
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px; }
+      .simply-works-outer-container .power-it-up-container .kiss-to-pair .text {
+        font-size: 20px;
+        line-height: 1.05; }
     .simply-works-outer-container .power-it-up-container .plays-nicely {
       display: flex;
       flex-direction: column;
       width: 264.2px; }
+      .simply-works-outer-container .power-it-up-container .plays-nicely .icon {
+        width: 269px;
+        height: 182px;
+        background: url("./../images/pencil-icons-sprite.svg") no-repeat;
+        background-position: 50% -980px;
+        background-size: 350px auto;
+        margin-bottom: -10px; }
       .simply-works-outer-container .power-it-up-container .plays-nicely .title {
-        text-align: center; }
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px; }
+      .simply-works-outer-container .power-it-up-container .plays-nicely .text {
+        font-size: 20px;
+        line-height: 1.05; }
+  .simply-works-outer-container .support {
+    color: #eb5e28;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 5px 0 5px 0; }
+  .simply-works-outer-container .pencil-to-people {
+    color: #66625B;
+    font-size: 4.5em;
+    margin-top: 175px;
+    margin-bottom: 20px; }
+  .simply-works-outer-container .kiss-pair {
+    color: #66625B;
+    font-size: 1.625em;
+    margin-bottom: 40px; }
+  .simply-works-outer-container .app-image {
+    width: 100%;
+    height: 400px;
+    background: url("http://www.fiftythree.com/assets/images/pencil-ready/pencil-ready-apps.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 110% auto; }
+  .simply-works-outer-container .developers-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; }
+    .simply-works-outer-container .developers-wrap .pencil-apps {
+      color: #eb5e28;
+      font-size: 20px;
+      text-decoration: none; }
+    .simply-works-outer-container .developers-wrap .developers {
+      margin-left: 50px;
+      color: #eb5e28;
+      font-size: 20px;
+      text-decoration: none; }
+  .simply-works-outer-container .worldwide-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px; }
+    .simply-works-outer-container .worldwide-wrapper .worldwide {
+      width: 250px;
+      font-size: 23px;
+      color: #eb5e28;
+      margin-top: 100px; }
+    .simply-works-outer-container .worldwide-wrapper .pencils {
+      width: 275px;
+      height: 400px;
+      background: url("http://www.fiftythree.com/assets/images/pencil/pencil-trio.png");
+      background-size: 100% 110%; }
+    .simply-works-outer-container .worldwide-wrapper .starting-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 75px;
+      margin-left: 80px; }
+      .simply-works-outer-container .worldwide-wrapper .starting-wrap .starting {
+        font-size: 23px; }
+      .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap {
+        display: flex;
+        justify-content: center; }
+        .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap .dollar {
+          font-size: 25px;
+          padding-top: 7px; }
+        .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap .price {
+          font-size: 60px; }
+        .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap .cents-wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap .cents-wrap .cents {
+            font-size: 24px;
+            padding-top: 6px;
+            margin-left: -6px; }
+          .simply-works-outer-container .worldwide-wrapper .starting-wrap .price-wrap .cents-wrap .usd {
+            font-size: 18px;
+            padding-top: 3px;
+            margin-top: 1px;
+            margin-left: -2px;
+            color: gray; }
+      .simply-works-outer-container .worldwide-wrapper .starting-wrap .amazon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 190px;
+        height: 41px;
+        background: #eb5e28;
+        border-radius: 100px;
+        color: #FFFCF5;
+        font-size: 18px;
+        text-decoration: none; }
+      .simply-works-outer-container .worldwide-wrapper .starting-wrap .amazon:hover {
+        background: #B33C12; }
+      .simply-works-outer-container .worldwide-wrapper .starting-wrap .also {
+        margin-top: 20px;
+        cursor: pointer; }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300");
 .shop-nav-wrapper {

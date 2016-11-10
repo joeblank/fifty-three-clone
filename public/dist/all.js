@@ -216,7 +216,7 @@ $(window).scroll(function () {
 
   //commented out console.log so it's not
   //logging all the time! Uncomment to debug.
-  console.log(winScroll);
+  // console.log(winScroll);
 
   var scrollLocation = 7862;
   var scrollIncrement = 28;
@@ -363,7 +363,7 @@ $(window).scroll(function () {
       'position': 'static'
     });
   };
-  if (winScroll > parallaxRatio + 881) {
+  if (winScroll > parallaxRatio + 681) {
     $('.battery').css({
       'position': 'absolute',
       'top': parallaxRatio + 3802
@@ -427,8 +427,8 @@ $(window).scroll(function () {
   // TIP
   if (winScroll > parallaxRatio) {
     $('.tip').css({
-      'position': 'fixed',
-      'top': parallaxRatio - 4387
+      'position': 'absolute',
+      'top': "1098px"
     });
   } else {
     $('.tip').css({
@@ -531,6 +531,15 @@ angular.module('fifty-three').controller('shopCtrl', function ($scope, shopServi
 'use strict';
 
 angular.module('fifty-three').service('shopService', function ($http, $q) {});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
+});
 'use strict';
 
 angular.module('fifty-three').directive('carouselDir', function () {
@@ -712,15 +721,6 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
-});
-'use strict';
-
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
 });
 'use strict';
 

@@ -5,7 +5,7 @@ let winScroll = $(this).scrollTop();
 
 //commented out console.log so it's not
 //logging all the time! Uncomment to debug.
-console.log(winScroll);
+// console.log(winScroll);
 
 const scrollLocation = 7862;
 const scrollIncrement = 28;
@@ -153,7 +153,7 @@ if (winScroll > parallaxRatio) {
     'position': 'static'
   })
 };
-if (winScroll > parallaxRatio + 881) {
+if (winScroll > parallaxRatio + 681) {
   $('.battery').css({
     'position': 'absolute',
     'top': (parallaxRatio + 3802)
@@ -219,8 +219,8 @@ if (winScroll > 6725) {
 // TIP
 if(winScroll > parallaxRatio) {
   $('.tip').css({
-    'position': 'fixed',
-    'top': (parallaxRatio - 4387)
+    'position': 'absolute',
+    'top': "1098px"
   })
 } else {
   $('.tip').css({
