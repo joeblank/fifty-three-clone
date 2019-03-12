@@ -83,6 +83,7 @@ $scope.placeOrder = (user_id, order_id) => {
   $scope.payment.amount = 23;
 
   $scope.charge = function () {
+    console.log($scope.payment.card)
     return stripe.card.createToken($scope.payment.card)
     .then(function (response) {
       console.log('token created for card ending in ', response.card.last4);

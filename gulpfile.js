@@ -9,7 +9,7 @@ const nodemon = require('gulp-nodemon');
 const paths = {
   jsSource: ['./public/app/app.js', './public/app/**/*.js'],
   scssSource: ['./public/app/**/*.scss'],
-  server: ['./server/server.js']
+  server: './server/server.js'
 };
 
 gulp.task('serve', () => {
@@ -22,7 +22,7 @@ gulp.task('js-bundle', () => {
   gulp.src(paths.jsSource)
   .pipe(sourcemap.init())
   .pipe(babel({
-    presets: ['es2015']
+    presets: ['env']
   }))
   .pipe(concat('all.js'))
   .pipe(sourcemap.write('./'))
