@@ -19,12 +19,8 @@ passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
 }, (email, password, done) => {
-  db.user_search_email([email], (err, user) => {
+  db.user_search_email([email]).then((user) => {
     user = user[0];
-
-    //if err, return err
-    if (err) done(err);
-
     //if no user is found, return false
     if (!user) return done(null, false);
 
@@ -42,8 +38,8 @@ passport.serializeUser((user, done) =>  {
   done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-  db.user_search_id([id], (err, user) => {
-    done(err, user);
+  db.user_search_id([id]).then((user) => {
+    done(null, user);
   });
 });
 

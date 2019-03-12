@@ -2,7 +2,7 @@
 
 angular.module('fifty-three', ['ui.router', 'angular-stripe']).config(function ($stateProvider, $urlRouterProvider, stripeProvider) {
 
-  stripeProvider.setPublishableKey('pk_test_oG3v6EKMryCurl1Q4D8tlv3m');
+  stripeProvider.setPublishableKey('pk_test_kzb5s0W7xy3ki3oWuG1lR7Nd');
 
   $urlRouterProvider.otherwise('/pencil');
 
@@ -165,6 +165,7 @@ angular.module('fifty-three').controller('cartCtrl', function ($scope, cartServi
   $scope.payment.amount = 23;
 
   $scope.charge = function () {
+    console.log($scope.payment.card);
     return stripe.card.createToken($scope.payment.card).then(function (response) {
       console.log('token created for card ending in ', response.card.last4);
       var payment = angular.copy($scope.payment);
@@ -633,6 +634,7 @@ $(window).scroll(function () {
     $('.sensor').css({
       'position': 'absolute',
       'top': '1515px'
+      // 'transform': 'translate( 0px, ' + (winScroll / 1000) + '%)'
     });
   }
   if (winScroll > 6570) {
@@ -757,15 +759,6 @@ angular.module('fifty-three').controller('shopCtrl', function ($scope, shopServi
 angular.module('fifty-three').service('shopService', function ($http, $q) {});
 'use strict';
 
-angular.module('fifty-three').directive('footerDir', function () {
-  return {
-    restrict: 'AE',
-    templateUrl: './app/directives/footerDir/footerDir.html',
-    controller: function controller($scope) {}
-  };
-});
-'use strict';
-
 angular.module('fifty-three').directive('carouselDir', function () {
 
   return {
@@ -778,7 +771,6 @@ angular.module('fifty-three').directive('carouselDir', function () {
       $scope.getProducts = function () {
         carouselDirService.getProducts().then(function (response) {
           $scope.products = response;
-          console.log(response);
           $scope.pencil = $scope.products[0];
         });
       };
@@ -786,8 +778,6 @@ angular.module('fifty-three').directive('carouselDir', function () {
 
       $scope.getCurrentUser = function () {
         authService.getCurrentUser().then(function (response) {
-          console.log('User on session?');
-          console.log(response);
           $scope.currentUser = response.data;
         }).catch(function (err) {
           $scope.currentUser = null;
@@ -854,6 +844,13 @@ angular.module('fifty-three').directive('carouselDir', function () {
             $scope.user.password = '';
           } else {
             $scope.addToCart($scope.pencil);
+            $('.sign-in-bg').fadeOut(500);
+            $('.sign-in-outer-wrap').css({
+              "left": "-450px"
+            });
+            $('.sign-up-outer-wrap').css({
+              "right": "-450px"
+            });
           }
         }).catch(function (err) {
           swal({
@@ -872,6 +869,13 @@ angular.module('fifty-three').directive('carouselDir', function () {
           } else {
             alert('user created');
             $scope.newUser = {};
+            $('.sign-in-bg').fadeOut(500);
+            $('.sign-in-outer-wrap').css({
+              "left": "-450px"
+            });
+            $('.sign-up-outer-wrap').css({
+              "right": "-450px"
+            });
           }
         }).catch(function (err) {
           alert('unable to create user');
@@ -967,8 +971,9 @@ angular.module('fifty-three').directive('carouselDir', function () {
       //===END CONTROLLER==
     }
     //===END RETURN========
+
+    //===END=================
   };
-  //===END=================
 });
 'use strict';
 
@@ -1015,6 +1020,15 @@ angular.module('fifty-three').service('carouselDirService', function ($http, $q)
   };
 
   //==END=====
+});
+'use strict';
+
+angular.module('fifty-three').directive('footerDir', function () {
+  return {
+    restrict: 'AE',
+    templateUrl: './app/directives/footerDir/footerDir.html',
+    controller: function controller($scope) {}
+  };
 });
 'use strict';
 

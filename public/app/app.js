@@ -1,7 +1,7 @@
 angular.module('fifty-three', ['ui.router', 'angular-stripe'])
 .config(($stateProvider, $urlRouterProvider, stripeProvider) => {
 
-  stripeProvider.setPublishableKey('pk_test_oG3v6EKMryCurl1Q4D8tlv3m');
+  stripeProvider.setPublishableKey('pk_test_kzb5s0W7xy3ki3oWuG1lR7Nd');
 
   $urlRouterProvider.otherwise('/pencil')
 

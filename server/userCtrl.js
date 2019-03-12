@@ -14,14 +14,10 @@ module.exports = {
     const user = req.body;
     user.password = hashPassword(user.password);
 
-    db.user_create([user.name, user.email, user.password], (err, user) => {
-      if (err) return res.status(500).send(err);
+    db.user_create([user.name, user.email, user.password]).then((user) => {
 
       user = user[0]
-      db.order_create([user.id], (err, order) => {
-        if (err) {
-          return res.status(500).send(err);
-        }
+      db.order_create([user.id]).then((order) => {
         delete user.password;
         res.status(200).send(user);
       })

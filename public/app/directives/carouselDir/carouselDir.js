@@ -11,7 +11,6 @@ angular.module('fifty-three')
       $scope.getProducts = () => {
         carouselDirService.getProducts().then((response) => {
           $scope.products = response;
-          console.log(response);
           $scope.pencil = $scope.products[0];
         })
       }
@@ -19,8 +18,6 @@ angular.module('fifty-three')
 
       $scope.getCurrentUser = () => {
         authService.getCurrentUser().then((response) => {
-          console.log('User on session?');
-          console.log(response);
           $scope.currentUser = response.data;
         }).catch((err) => {
           $scope.currentUser = null;
@@ -91,6 +88,13 @@ angular.module('fifty-three')
             $scope.user.password = '';
           } else {
             $scope.addToCart($scope.pencil);
+            $('.sign-in-bg').fadeOut(500);
+            $('.sign-in-outer-wrap').css({
+              "left": "-450px"
+            });
+            $('.sign-up-outer-wrap').css({
+              "right": "-450px"
+            })
           }
         }).catch((err) => {
           swal({
@@ -109,6 +113,13 @@ angular.module('fifty-three')
           } else {
             alert('user created');
             $scope.newUser = {};
+            $('.sign-in-bg').fadeOut(500);
+            $('.sign-in-outer-wrap').css({
+              "left": "-450px"
+            });
+            $('.sign-up-outer-wrap').css({
+              "right": "-450px"
+            })
           }
         }).catch((err) => {
           alert('unable to create user');

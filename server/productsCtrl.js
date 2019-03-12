@@ -14,46 +14,33 @@ const hashPassword = (password) => {
 module.exports = {
 
   getInCart: (req, res, next) => {
-    db.product_cart_find([req.params.cartid], (err, products) => {
-      if (err) {
-        return res.status(500).send(err);
-      };
+    db.product_cart_find([req.params.cartid]).then((err, products) => {
       res.status(200).send(products);
     })
   },
   addToCart: (req,res, next) => {
     const product = req.body;
 
-    db.product_order_insert([req.params.cartid, product.id, product.qty], (err, productInCart) => {
-      if (err) {
-        return res.status(500).send(err);
-      };
+    db.product_order_insert([req.params.cartid, product.id, product.qty]).then((productInCart) => {
       res.status(200).send('Item added successfully');
     })
   },
   updateProductInCart: (req, res, next) => {
-    db.product_cart_update([req.params.itemid, req.params.qty], (err, productInCart) => {
-      if (err) {
-        return res.status(500).send(err);
-      };
+    db.product_cart_update([req.params.itemid, req.params.qty]).then((productInCart) => {
       res.status(200).send('Item update successfully');
     });
   },
   deleteCartItem: (req,res, next) => {
-    db.product_cart_remove([req.params.itemid], (err, product) => {
-      if (err) {
-        return res.status(500).send(err);
-      };
+    db.product_cart_remove([req.params.itemid]).then((product) => {
       res.status(200).send('Item removed successfully');
     });
   },
   getProducts: (req, res, next) => {
-    db.products((err, products) => {
-      if (err) {
-        return res.status(500).send(err);
-      };
-      res.status(200).send(products);
-    })
+    db.products()
+      .then((products) => {
+        res.status(200).send(products);
+      })
+      .catch(err => res.sendStatus(500))
   }
 
 
